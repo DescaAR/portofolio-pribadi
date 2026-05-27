@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desca Affajry Rais - Portofolio</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-ieo3w5xP+gJ2O9qfP4pA4J9R9R6VqR4g9t+5C4+6G6iL1Z4l5z/6X4B2jFwF1e+2d8yR5bXoA4bV3R6sB/nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #6EE7B7, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .shadow-custom {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            padding: 24px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Custom scrollbar style for horizontal scrolling */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-bold text-gray-900">Desca Affajry Rais</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#about" class="text-sm font-medium text-gray-600 hover:text-gray-900">Profil</a>
+                <a href="#education" class="text-sm font-medium text-gray-600 hover:text-gray-900">Pendidikan</a>
+                <a href="#organization" class="text-sm font-medium text-gray-600 hover:text-gray-900">Organisasi</a>
+                <a href="#trainings" class="text-sm font-medium text-gray-600 hover:text-gray-900">Pelatihan</a>
+                <a href="#skills" class="text-sm font-medium text-gray-600 hover:text-gray-900">Keahlian</a>
+                <a href="#portfolio" class="text-sm font-medium text-gray-600 hover:text-gray-900">Portofolio</a>
+                <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-gray-900">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 lg:py-32 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-4">
+                    <span class="text-gradient">Selamat Datang</span> di Portofolio Saya
+                </h1>
+                <p class="text-lg lg:text-xl text-gray-600 mb-8 max-w-3xl mx-auto text-justify">
+                    Saya adalah seorang yang memiliki passion dalam Matematika, Data, dan Analisis. Saya percaya bahwa data adalah aset berharga yang jika diolah dengan benar dapat memberikan wawasan yang mendalam dan membantu organisasi dalam membuat keputusan yang lebih tepat dan strategis.
+                </p>
+                <div class="space-x-4">
+                    <a href="#contact" class="inline-block bg-white text-blue-500 font-bold py-3 px-8 rounded-full border-2 border-blue-500 hover:bg-blue-50 transition duration-300">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-10">Profil</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Saya memiliki pengalaman bertahun-tahun dalam mengembangkan solusi kreatif yang disesuaikan dengan kebutuhan klien. Dari desain visual yang menawan hingga strategi digital yang efektif, saya berdedikasi untuk memberikan hasil terbaik.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Misi saya adalah untuk mengubah ide-ide menjadi kenyataan yang berdampak. Mari kita bekerja sama untuk mencapai tujuan Anda.
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <img src="https://placehold.co/400x400/D1D5DB/1F2937?text=Profil" alt="Gambar Profil" class="rounded-full w-64 h-64 object-cover shadow-lg border-4 border-white">
+                    </div>
+                </div>
+                 <!-- Gemini About Me -->
+                 <div class="mt-16 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Tanya Seputar Desca Affajry Rais</h3>
+                    <div class="max-w-xl mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
+                        <textarea id="about-input" class="w-full h-24 p-4 mb-4 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contoh: 'Apa keahlian utama Desca?' atau 'Di mana Desca mendapatkan pendidikannya?'"></textarea>
+                        <button id="ask-button" class="bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300">Tanya ✨</button>
+                        <div id="about-output" class="mt-6 p-4 bg-white rounded-lg text-left text-gray-700">
+                            <!-- Output will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education and Achievements Section -->
+        <section id="education" class="py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Pendidikan & Prestasi</h2>
+                <div class="flex flex-col gap-12">
+                    <!-- Education -->
+                    <div class="bg-white rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Pendidikan</h3>
+                        <div class="space-y-4 text-gray-600">
+                            <div>
+                                <p class="flex justify-between">
+                                    <strong>Universitas Diponegoro</strong>
+                                    <span>2023 - sekarang</span>
+                                </p>
+                                <p>Strata 1 - Matematika</p>
+                                <p>IPK: 3.88/4.0</p>
+                                <h4 class="font-bold mt-2">PRESTASI</h4>
+                                <ul class="list-disc pl-5">
+                                    <li>Delegasi ON-MIPA UNDIP Bidang Matematika 2025 <br> Universitas Diponegoro</li>
+                                    <li>Juara 3 Aksyasa Science Olympiad Exscutive (ASOE) 4.0 Bidang Matematika <br> Universitas Semarang</li>
+                                    <li>Silver Medalist Isaac Newton Competition 2025 <br> Institut Pertanian Bogor</li>
+                                </ul>
+                            </div>
+                            <hr class="my-6 border-gray-300">
+                            <div>
+                                <p class="flex justify-between">
+                                    <strong>SMAN 1 Sulang</strong>
+                                    <span>2020 - 2023</span>
+                                </p>
+                                <p>Jurusan Matematika dan Ilmu Pengetahuan Alam</p>
+                                <p>IPK: 85.80/100.0</p>
+                                <h4 class="font-bold mt-2">PRESTASI</h4>
+                                <ul class="list-disc pl-5">
+                                    <li>Finalis Olimpiade Matematika MATHLICIOUS 2022 <br> IAIN Kudus</li>
+                                    <li>Delegasi OSN Bidang Informatika 2022 <br> SMAN 1 Sulang</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organization and Committees Section -->
+        <section id="organization" class="py-16 lg:py-24 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Organisasi & Kepanitiaan</h2>
+                <div class="flex flex-col gap-12">
+                    <!-- Organization -->
+                    <div class="bg-white rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Organisasi</h3>
+                        <ul id="organization-list" class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li><strong>UKM KOMIPA UNDIP (Kelompok Olimpiade Matematika dan Ilmu Pengetahuan Alam)</strong>
+                                <ul class="list-circle pl-5 mt-2 space-y-1">
+                                    <li>Ketua Umum - 2025</li>
+                                    <li>Staf Bidang Networking and Public Relation - 2024</li>
+                                </ul>
+                            </li>
+                            <li><strong>Himpunan Mahasiswa Matematika UNDIP</strong>
+                                <ul class="list-circle pl-5 mt-2 space-y-1">
+                                    <li>Staf Ahli Bidang Pendidikan dan Penalaran - 2025</li>
+                                    <li>Staf Muda Bidang Pendidikan dan Penalaran - 2024</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Committees -->
+                    <div class="bg-white rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Kepanitiaan</h3>
+                        <ul id="committee-list" class="list-disc pl-5 space-y-4 text-gray-600">
+                            <li><strong>27th Undip's Mathematics Competition</strong> <br> Koordinator Divisi Pendaftaran</li>
+                            <li><strong>26th Undip's Mathematics Competition</strong> <br> Koordinator Divisi Acara</li>
+                            <li><strong>25th Undip's Mathematics Competiton</strong> <br> Volunteer Divisi Perlengkapan</li>
+                            <li><strong>Math Action for Social and Education (Mathication) 2024</strong> <br> Koordinator Divisi Hubungan Masyarakat</li>
+                            <li><strong>Latihan Keterampilan Manajemen Mahasiswa Pra-dasar (LKMM-PD) Matematika 2024</strong> <br> Staf Divisi Acara</li>
+                            <li><strong>Dialog Akademik Matematika 2024</strong> <br> Staf Divisi Perlengkapan</li>
+                            <li><strong>Kunjungan Industri Matematika 2024</strong> <br> Staf Divisi Acara</li>
+                            <li><strong>Kunjungan Industri Matematika 2025</strong> <br> Staf Divisi Acara</li>
+                            <li><strong>Workshop Matematika 2024</strong> <br> Staf Divisi Acara</li>
+                            <li><strong>Pemusatan Pembinaan Delegasi ON-MIPA UNDIP 2024</strong> <br> LO (Liaison Officer) Bidang Matematika</li>
+                            <li><strong>Seleksi ON-MIPA UNDIP 2024</strong> <br> Koordinator Divisi Perlengkapan</li>
+                            <li><strong>Learning in Mathematics Islamic Training (LIMIT) 2024</strong> <br> Staf Divisi Perlengkapan</li>
+                            <li><strong>Klinik Matematika 2024</strong> <br> Volunteer Pengajar</li>
+                            <li><strong>Latihan Keterampilan Manajemen Mahasiswa Tingkat Dasar (LKMM-TD) FSM 2025</strong> <br> Staf Divisi Kurikulum</li>
+                            <li><strong>Leadership Training (LT) FSM 2025</strong> <br> Staf Divisi Hubungan Masyarakat</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trainings Section -->
+        <section id="trainings" class="py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Pelatihan & Sertifikasi</h2>
+                <div class="flex flex-col gap-12">
+                    <div class="bg-white rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Pelatihan</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li><strong>Nama Pelatihan</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang materi atau pencapaian.</li>
+                            <li><strong>Nama Pelatihan</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang materi atau pencapaian.</li>
+                            <li><strong>Nama Pelatihan</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang materi atau pencapaian.</li>
+                            <li><strong>Nama Pelatihan</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang materi atau pencapaian.</li>
+                            <li><strong>Nama Pelatihan</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang materi atau pencapaian.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Sertifikasi</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li><strong>Nama Sertifikasi</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang sertifikasi.</li>
+                            <li><strong>Nama Sertifikasi</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang sertifikasi.</li>
+                            <li><strong>Nama Sertifikasi</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang sertifikasi.</li>
+                            <li><strong>Nama Sertifikasi</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang sertifikasi.</li>
+                            <li><strong>Nama Sertifikasi</strong> - Penyelenggara (Tahun) <br> Deskripsi singkat tentang sertifikasi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 lg:py-24 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Keahlian</h2>
+                <div class="flex flex-col space-y-8">
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-center mb-2">Data Analis</h3>
+                        <p class="text-gray-600">Mampu menganalisis data untuk mengidentifikasi tren, pola, dan wawasan yang dapat digunakan untuk pengambilan keputusan.</p>
+                        <h4 class="text-lg font-bold mt-4 mb-2">Pengalaman:</h4>
+                        <ul class="list-disc pl-5 text-left text-gray-600">
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-center mb-2">Data Science</h3>
+                        <p class="text-gray-600">Menguasai teknik pemodelan statistik dan machine learning untuk memprediksi hasil dan mengotomatiskan proses.</p>
+                        <h4 class="text-lg font-bold mt-4 mb-2">Pengalaman:</h4>
+                        <ul class="list-disc pl-5 text-left text-gray-600">
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                            <li><strong>Posisi</strong> - Nama Perusahaan/Organisasi (Tahun) <br> Deskripsi singkat tentang tanggung jawab atau pencapaian.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-center mb-2">Tentor Matematika</h3>
+                        <p class="text-gray-600">Berpengalaman dalam mengajar matematika dan membantu siswa memahami konsep-konsep yang kompleks.</p>
+                        <h4 class="text-lg font-bold mt-4 mb-2">Pengalaman:</h4>
+                        <ul class="list-disc pl-5 text-left text-gray-600 space-y-4">
+                            <li>
+                                <strong>Tutor - BERSERI (Learning and Discussion Program)</strong> <br>
+                                Mathematics Student Association, Diponegoro University <br>
+                                Mentored and prepared 150+ mathematics students for mid-term and final exams.<br>
+                                Taught Calculus, Multivariable Calculus, Real Analysis, Complex Analysis, and Abstract Algebra.
+                                </li>
+                            <li>
+                                <strong>Tutor - ON-MIPA Mathematics Division</strong> <br>
+                                KOMIPA Student Activity Unit, Diponegoro University <br>
+                                Mentored and prepared 15+ members for the Diponegoro University ON-MIPA Selection.<br>
+                                Taught Complex Analysis and Combinatorics.
+                                </li>
+                            <li>
+                                <strong>Tutor - Academic Delegation</strong> <br>
+                                Mathematics Student Association, Diponegoro University <br>
+                                Mentored and prepared 100+ mathematics students for mid-term and final exams.<br>
+                                Taught Set Theory, Calculus, and Multivariable Calculus.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Portofolio & Studi Kasus</h2>
+                
+                <!-- Data Analyst Portfolio -->
+                <div class="mb-12 relative group">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-gray-700">Data Analis</h3>
+                    <div id="data-analyst-container" class="flex overflow-x-auto gap-8 pb-4 scrollbar-hide">
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Data+Analisis+1" alt="Data Analisis Proyek 1" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Proyek Analisis Penjualan</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Proyek analisis penjualan ini bertujuan untuk mengidentifikasi produk-produk terlaris dan tren pasar di tahun 2023. Saya menggunakan Python dan library Pandas untuk membersihkan dan memproses data, serta Matplotlib dan Seaborn untuk visualisasi. Hasil analisis menunjukkan bahwa produk kategori 'elektronik' mengalami lonjakan penjualan di kuartal keempat. Rekomendasi yang diberikan adalah fokus pada promosi produk tersebut di akhir tahun dan meningkatkan stok.">Menganalisis data penjualan untuk mengidentifikasi produk terlaris dan tren pasar di tahun 2023.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Data+Analisis+2" alt="Data Analisis Proyek 2" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Studi Kasus Perilaku Pelanggan</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Studi kasus ini berfokus pada analisis pola perilaku pelanggan untuk meningkatkan retensi dan personalisasi layanan. Dengan menggunakan teknik segmentasi RFM (Recency, Frequency, Monetary), saya mengelompokkan pelanggan ke dalam beberapa segmen. Insight yang didapat digunakan untuk membuat kampanye pemasaran yang lebih tertarget, yang berhasil meningkatkan tingkat retensi pelanggan sebesar 15% dalam enam bulan.">Menganalisis pola perilaku pelanggan untuk meningkatkan retensi dan personalisasi layanan.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Analisis+3" alt="Data Analisis Proyek 3" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Analisis Kepuasan Pelanggan</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Proyek ini melibatkan analisis survei kepuasan pelanggan untuk mengidentifikasi area yang perlu ditingkatkan. Saya menggunakan analisis sentimen teks untuk memahami feedback kualitatif, dan statistik deskriptif untuk mengukur tingkat kepuasan. Hasilnya digunakan untuk menyusun strategi perbaikan produk dan layanan.">Analisis survei untuk mengidentifikasi area yang perlu ditingkatkan dalam layanan pelanggan.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Analisis+4" alt="Data Analisis Proyek 4" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Studi Efektivitas Kampanye Pemasaran</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Studi ini mengevaluasi efektivitas kampanye pemasaran digital melalui analisis A/B testing dan konversi. Saya mengukur metrik seperti tingkat klik (CTR) dan tingkat konversi untuk menentukan varian iklan mana yang paling efektif. Insight ini membantu tim pemasaran mengoptimalkan alokasi anggaran dan memaksimalkan ROI.">Menganalisis efektivitas kampanye pemasaran digital dan A/B testing.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Analisis+5" alt="Data Analisis Proyek 5" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Laporan Tren Media Sosial</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Pembuatan laporan tren media sosial untuk mengidentifikasi topik-topik viral dan sentimen publik terhadap merek. Dengan menggunakan teknik web scraping dan analisis data, saya menyajikan wawasan yang membantu tim strategi konten merencanakan kampanye yang relevan dan menarik bagi audiens.">Membuat laporan tren media sosial untuk mengidentifikasi topik viral dan sentimen publik.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg opacity-50 hover:opacity-100 transition duration-300 scroll-left-btn" data-target="data-analyst-container">
+                        <i class="fas fa-chevron-left text-gray-700"></i>
+                    </button>
+                    <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg opacity-50 hover:opacity-100 transition duration-300 scroll-right-btn" data-target="data-analyst-container">
+                        <i class="fas fa-chevron-right text-gray-700"></i>
+                    </button>
+                </div>
+
+                <!-- Data Science Portfolio -->
+                <div class="mb-12 relative group">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-gray-700">Data Science</h3>
+                    <div id="data-science-container" class="flex overflow-x-auto gap-8 pb-4 scrollbar-hide">
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Data+Science+1" alt="Data Science Proyek 1" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Model Prediksi Harga Rumah</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Proyek ini melibatkan pembangunan model machine learning untuk memprediksi harga properti berdasarkan berbagai fitur seperti lokasi, luas tanah, dan jumlah kamar. Saya menggunakan regresi linier dan Random Forest untuk membandingkan akurasi model. Model terbaik, dengan R-squared 0.85, memberikan prediksi yang sangat akurat, membantu calon pembeli dan penjual membuat keputusan yang lebih baik.">Membangun model machine learning untuk memprediksi harga properti berdasarkan berbagai fitur.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Data+Science+2" alt="Data Science Proyek 2" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Sistem Rekomendasi E-commerce</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Mengembangkan sistem rekomendasi produk untuk meningkatkan penjualan dan pengalaman pengguna. Menggunakan teknik kolaboratif filtering, saya menganalisis interaksi pengguna dengan produk untuk memberikan rekomendasi yang personal. Implementasi sistem ini menghasilkan peningkatan click-through rate sebesar 20% dan mendorong cross-selling.">Mengembangkan sistem rekomendasi produk untuk meningkatkan penjualan dan pengalaman pengguna.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Data+Science+3" alt="Data Science Proyek 3" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Deteksi Penipuan Online</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Proyek ini berfokus pada pembangunan model deteksi anomali untuk mengidentifikasi transaksi keuangan yang berpotensi penipuan. Dengan menggunakan algoritma unsupervised learning seperti Isolation Forest, saya berhasil menciptakan sistem yang dapat mendeteksi pola tidak biasa dengan akurasi tinggi, mengurangi kerugian finansial.">Membangun model deteksi penipuan online menggunakan machine learning.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Data+Science+4" alt="Data Science Proyek 4" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Klasifikasi Gambar Makanan</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Proyek ini menggunakan deep learning (CNN) untuk mengklasifikasikan gambar-gambar makanan. Model dilatih menggunakan dataset gambar yang beragam untuk mengenali berbagai jenis hidangan. Akurasi model yang tinggi memungkinkan integrasi ke dalam aplikasi seluler, membantu pengguna mengidentifikasi makanan hanya dengan mengambil foto.">Mengembangkan model klasifikasi gambar makanan menggunakan Convolutional Neural Networks (CNN).</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 flex-shrink-0 w-80">
+                            <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Data+Science+5" alt="Data Science Proyek 5" class="rounded-lg mb-4">
+                            <h4 class="text-xl font-bold mb-2">Analisis Sentimen Twitter</h4>
+                            <p class="text-gray-600 text-sm mb-4" data-project-desc="Analisis sentimen pada tweet terkait produk baru. Menggunakan Natural Language Processing (NLP), saya mengklasifikasikan tweet ke dalam kategori sentimen positif, negatif, atau netral. Hasil analisis memberikan wawasan berharga bagi tim produk untuk memahami penerimaan pasar dan melakukan perbaikan cepat.">Analisis sentimen pada data Twitter untuk memahami sentimen publik terhadap suatu produk.</p>
+                            <div class="flex justify-between mt-2">
+                                <button class="summarize-btn bg-purple-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-600 transition duration-300">Ringkas Proyek ✨</button>
+                                <a href="https://example.com/contoh-proyek.pdf" target="_blank" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300">Lihat PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg opacity-50 hover:opacity-100 transition duration-300 scroll-left-btn" data-target="math-tutor-container">
+                        <i class="fas fa-chevron-left text-gray-700"></i>
+                    </button>
+                    <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg opacity-50 hover:opacity-100 transition duration-300 scroll-right-btn" data-target="math-tutor-container">
+                        <i class="fas fa-chevron-right text-gray-700"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 lg:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Hubungi Saya</h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Tertarik untuk bekerja sama? Silakan kirim pesan atau hubungi saya melalui informasi di bawah.
+                </p>
+                <button id="contact-button-section" class="inline-block bg-white text-blue-500 font-bold py-3 px-8 rounded-full border-2 border-blue-500 hover:bg-blue-50 transition duration-300">
+                    Kirim Pesan
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 Desca Affajry Rais. Hak Cipta Dilindungi Undang-Undang.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/desca-affajry-rais/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.765s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.765-1.75 1.765zm13.5 12.268h-3v-5.604c0-3.368-4.336-3.238-4.336 0v5.604h-3v-11h3v1.765c1.396-2.585 7.63-2.353 7.63 2.195v7.04z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/descaafjryrais/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fab fa-instagram w-6 h-6"></i>
+                </a>
+                <a href="https://github.com/descaaffajryrais/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.334-2.22-.253-4.555-1.113-4.555-4.953 0-1.096.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.701.12 2.508.365 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.099 2.65.64.7 1.028 1.592 1.028 2.688 0 3.848-2.339 4.695-4.568 4.946.355.305.675.917.675 1.851 0 1.334-.012 2.41-.012 2.727 0 .267.18.578.688.482A10.05 10.05 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+                 <a href="https://wa.me/nomor-telepon-anda" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fab fa-whatsapp w-6 h-6"></i>
+                </a>
+                <a href="mailto:descaaffajry@email.com" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fas fa-envelope w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="summary-modal" class="modal">
+      <div id="summary-content" class="modal-content">
+        <span class="close-button" onclick="closeModal('summary-modal')">&times;</span>
+        <h3 class="text-xl font-bold mb-4">Ringkasan Proyek</h3>
+        <p id="summary-text" class="text-gray-700"></p>
+      </div>
+    </div>
+    
+    <div id="contact-modal" class="modal">
+        <div id="contact-content" class="modal-content text-center">
+            <span class="close-button" onclick="closeModal('contact-modal')">&times;</span>
+            <h3 class="text-xl font-bold mb-4">Hubungi Saya</h3>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/desca-affajry-rais/" target="_blank" class="text-gray-800 hover:text-blue-500 transition duration-300 flex flex-col items-center">
+                    <i class="fab fa-linkedin fa-2x mb-1"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:descaaffajry@email.com" class="text-gray-800 hover:text-blue-500 transition duration-300 flex flex-col items-center">
+                    <i class="fas fa-envelope fa-2x mb-1"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://wa.me/nomor-telepon-anda" target="_blank" class="text-gray-800 hover:text-green-500 transition duration-300 flex flex-col items-center">
+                    <i class="fab fa-whatsapp fa-2x mb-1"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to scroll the portfolio containers
+        function scrollLeft(containerId) {
+            const container = document.getElementById(containerId);
+            container.scrollBy({
+                left: -320, // Adjust this value as needed
+                behavior: 'smooth'
+            });
+        }
+        
+        function scrollRight(containerId) {
+            const container = document.getElementById(containerId);
+            container.scrollBy({
+                left: 320, // Adjust this value as needed
+                behavior: 'smooth'
+            });
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "flex";
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+        
+        // Function for calling the Gemini API
+        async function callGeminiAPI(prompt) {
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                return result.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                return "Maaf, terjadi kesalahan saat memproses permintaan Anda. Silakan coba lagi.";
+            }
+        }
+        
+        // Function to summarize a project
+        document.querySelectorAll('.summarize-btn').forEach(button => {
+            button.addEventListener('click', async (event) => {
+                const projectDescElement = event.target.closest('.rounded-lg').querySelector('[data-project-desc]');
+                if (!projectDescElement) {
+                    return;
+                }
+                const projectDesc = projectDescElement.getAttribute('data-project-desc');
+                
+                showLoadingModal();
+                
+                const prompt = `Ringkas deskripsi proyek berikut ini menjadi satu paragraf yang ringkas dan profesional, fokus pada hasil dan dampak utama:\n\n${projectDesc}`;
+                const summary = await callGeminiAPI(prompt);
+                
+                document.getElementById('summary-text').innerText = summary;
+                document.getElementById('summary-modal').style.display = "flex";
+            });
+        });
+        
+        // Function to ask about Desca
+        document.getElementById('ask-button').addEventListener('click', async () => {
+            const aboutInput = document.getElementById('about-input').value;
+            const aboutOutput = document.getElementById('about-output');
+            
+            if (aboutInput.trim() === '') {
+                aboutOutput.innerHTML = '<p class="text-red-500">Silakan masukkan pertanyaan Anda.</p>';
+                return;
+            }
+
+            aboutOutput.innerHTML = '<p class="text-gray-500">Mencari informasi...</p>';
+
+            const aboutText = document.querySelector('#about p').innerText;
+            const skills = Array.from(document.querySelectorAll('#skills h3')).map(el => el.innerText).join(', ');
+            const education = Array.from(document.querySelectorAll('#education-list li')).map(el => el.innerText).join(', ');
+            const organization = Array.from(document.querySelectorAll('#organization-list li')).map(el => el.innerText).join(', ');
+            const achievements = Array.from(document.querySelectorAll('#achievements-list li')).map(el => el.innerText).join(', ');
+
+            const prompt = `Anda adalah asisten AI yang cerdas dan berpengetahuan luas tentang Desca Affajry Rais. Berdasarkan informasi berikut, jawab pertanyaan pengguna dengan ramah dan ringkas. Jangan mengarang informasi di luar data yang diberikan.\n\n` +
+            `Tentang: ${aboutText}\n` +
+            `Keahlian: ${skills}\n` +
+            `Pendidikan: ${education}\n` +
+            `Prestasi: ${achievements}\n` +
+            `Organisasi: ${organization}\n\n` +
+            `Pertanyaan pengguna: ${aboutInput}\n\n` +
+            `Jawaban:`;
+
+            const answer = await callGeminiAPI(prompt);
+            aboutOutput.innerHTML = answer;
+        });
+
+        function showLoadingModal() {
+            document.getElementById('summary-text').innerText = 'Membuat ringkasan...';
+            document.getElementById('summary-modal').style.display = "flex";
+        }
+        
+        // Event listeners for contact buttons
+        document.getElementById('contact-button-section').addEventListener('click', () => {
+            openModal('contact-modal');
+        });
+        
+        // Add event listeners for scroll buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.scroll-left-btn').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const targetId = button.getAttribute('data-target');
+                    scrollLeft(targetId);
+                });
+            });
+
+            document.querySelectorAll('.scroll-right-btn').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const targetId = button.getAttribute('data-target');
+                    scrollRight(targetId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
