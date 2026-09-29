@@ -115,3 +115,18 @@
   margin-top:9px;
   flex:0 0 auto !important;
 }
+
+/* Ensure the uploaded profile photo is always visible */
+.portrait::after{display:none!important}
+.portrait{background:var(--light)!important}
+.portrait .profile-photo{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center top!important;
+  opacity:1!important;
+  visibility:visible!important;
+  position:relative!important;
+  z-index:5!important;
+}
