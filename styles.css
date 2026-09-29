@@ -90,3 +90,10 @@
 .research-keywords{margin-top:16px}
 .research-label{display:block;margin-bottom:8px;font-size:.72rem;letter-spacing:.10em;text-transform:uppercase;color:var(--blue);font-weight:850}
 .research-authors{margin-top:7px!important}
+
+/* Committee status placement */
+.compact-item .status{
+  display:flex;
+  width:max-content;
+  margin-top:9px;
+}
