@@ -63,3 +63,21 @@
 [data-theme="dark"] .status-manuscript{background:#0e3431;color:#7ce3d8}
 [data-theme="dark"] .mobile-menu.open{background:#0b1525;border-color:#22344b}
 @media(max-width:820px){.research-grid,.skill-category-grid,.cert-grid{grid-template-columns:1fr}.research-card.featured{grid-column:span 1}.book-card{grid-template-columns:110px 1fr}.cv-panel{grid-template-columns:1fr}.cv-actions .btn{flex:1}}
+
+/* === Publication card uniformity and paper metadata === */
+.research-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.research-card{position:relative;overflow:hidden;display:flex;flex-direction:column;height:100%;min-width:0}
+.research-card.featured{grid-column:auto}
+.research-authors{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+.research-body{flex:1;display:flex;flex-direction:column}
+.research-abstract{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.research-abstract p{margin:7px 0 0;color:var(--muted);font-size:.89rem;line-height:1.68;text-align:justify}
+.research-keywords{margin-top:16px}
+.research-label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:850;color:var(--blue)}
+.research-card .tags{margin-top:8px}
+.research-card .pub-meta{margin-top:22px}
+.research-card .pub-meta>div{min-width:0}
+.research-card .pub-meta span,.research-card .pub-meta a{overflow-wrap:anywhere}
+.research-card .link-row{margin-top:14px}
+@media(max-width:1180px){.research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:820px){.research-grid{grid-template-columns:1fr}}
