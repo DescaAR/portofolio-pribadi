@@ -10,89 +10,53 @@
   <meta property="og:description" content="Mathematics undergraduate exploring pure mathematics, research, olympiad training, education, and computational problem solving." />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/styles.css" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(','\\)'], ['$', '$']],
+        displayMath: [['\\[','\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-in">
+      <a class="brand" href="#home">Desca Affajry Rais</a>
+      <nav class="nav-links" id="desktopNav" aria-label="Primary navigation"></nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode"><span id="themeIcon">◐</span></button>
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language"><span id="langLabel">ID</span></button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"></nav>
+  </header>
 
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)'], ['
-    displayMath: [['\\[','\\]']],
-    processEscapes: true
-  },
-  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
-};
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-<header class="nav">
-  <div class="container nav-in">
-    <a class="brand" href="#home">Desca Affajry Rais</a>
-    <nav class="nav-links" id="desktopNav" aria-label="Primary navigation"></nav>
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode"><span id="themeIcon">◐</span></button>
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language"><span id="langLabel">ID</span></button>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
+  <main id="app"></main>
+
+  <footer class="footer">
+    <div class="container footer-in">
+      <div>
+        <strong>Desca Affajry Rais</strong><br />
+        <span id="footerTagline">Mathematics · Research · Education</span>
+      </div>
+      <div>© <span id="year"></span> Desca Affajry Rais.</div>
     </div>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </section>
   </div>
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"></nav>
-</header>
-<main id="app"></main>
-<footer class="footer"><div class="container footer-in"><div><strong>Desca Affajry Rais</strong><br><span id="footerTagline">Mathematics · Research · Education</span></div><div>© <span id="year"></span> Desca Affajry Rais.</div></div></footer>
-<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
-<script src="/app.js"></script>
-</body>
-</html>, '
-    displayMath: [['\\[','\\]']],
-    processEscapes: true
-  },
-  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
-};
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-<header class="nav">
-  <div class="container nav-in">
-    <a class="brand" href="#home">Desca Affajry Rais</a>
-    <nav class="nav-links" id="desktopNav" aria-label="Primary navigation"></nav>
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode"><span id="themeIcon">◐</span></button>
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language"><span id="langLabel">ID</span></button>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
-    </div>
-  </div>
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"></nav>
-</header>
-<main id="app"></main>
-<footer class="footer"><div class="container footer-in"><div><strong>Desca Affajry Rais</strong><br><span id="footerTagline">Mathematics · Research · Education</span></div><div>© <span id="year"></span> Desca Affajry Rais.</div></div></footer>
-<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
-<script src="/app.js"></script>
-</body>
-</html>]],
-    displayMath: [['\\[','\\]']],
-    processEscapes: true
-  },
-  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
-};
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-<header class="nav">
-  <div class="container nav-in">
-    <a class="brand" href="#home">Desca Affajry Rais</a>
-    <nav class="nav-links" id="desktopNav" aria-label="Primary navigation"></nav>
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode"><span id="themeIcon">◐</span></button>
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language"><span id="langLabel">ID</span></button>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
-    </div>
-  </div>
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"></nav>
-</header>
-<main id="app"></main>
-<footer class="footer"><div class="container footer-in"><div><strong>Desca Affajry Rais</strong><br><span id="footerTagline">Mathematics · Research · Education</span></div><div>© <span id="year"></span> Desca Affajry Rais.</div></div></footer>
-<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
-<script src="/app.js"></script>
+
+  <script src="/app.js"></script>
 </body>
 </html>
