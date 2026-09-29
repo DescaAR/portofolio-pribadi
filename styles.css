@@ -97,3 +97,11 @@
   width:max-content;
   margin-top:9px;
 }
+
+/* Certification status placement */
+.cert-item .status{
+  display:flex;
+  width:max-content;
+  max-width:100%;
+  margin-top:9px;
+}
