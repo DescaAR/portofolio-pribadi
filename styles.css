@@ -105,3 +105,13 @@
   max-width:100%;
   margin-top:9px;
 }
+
+/* Certification badge sizing — match Committee & Volunteer Experience */
+.cert-item .status{
+  display:inline-flex !important;
+  width:auto !important;
+  max-width:max-content !important;
+  align-self:flex-start !important;
+  margin-top:9px;
+  flex:0 0 auto !important;
+}
