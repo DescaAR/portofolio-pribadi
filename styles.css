@@ -160,3 +160,23 @@
 [data-theme="dark"] .resource-panel h4,[data-theme="dark"] .profile-link-card strong,[data-theme="dark"] .research-timeline-item h4{color:#eef6ff}
 @media(max-width:900px){.grid-2-focus,.grid-academic-materials,.grid-teaching,.resource-grid{grid-template-columns:1fr}.profile-links{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.profile-links{grid-template-columns:1fr}.research-timeline-item{grid-template-columns:70px 1fr;gap:16px}.research-timeline:before{left:40px}.research-timeline-item:before{left:35px}}
+
+/* Active section navigation */
+.nav-links a.active,
+.mobile-menu a.active{
+  color:var(--blue)!important;
+  font-weight:800;
+}
+.nav-links a.active{
+  position:relative;
+}
+.nav-links a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-10px;
+  height:2px;
+  border-radius:999px;
+  background:var(--blue);
+}
