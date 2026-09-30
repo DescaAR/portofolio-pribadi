@@ -180,3 +180,31 @@
   border-radius:999px;
   background:var(--blue);
 }
+
+/* Pending academic profiles */
+.profile-link-pending{
+  border-style:dashed;
+}
+.profile-link-pending em{
+  margin-top:6px;
+  font-size:.72rem;
+  font-style:normal;
+  font-weight:800;
+  color:var(--amber);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.contact-profiles{
+  align-items:flex-start;
+}
+.contact-profiles strong{
+  max-width:62%;
+  text-align:right;
+  line-height:1.45;
+}
+@media(max-width:720px){
+  .contact-profiles strong{
+    max-width:100%;
+    text-align:left;
+  }
+}
