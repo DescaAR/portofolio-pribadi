@@ -252,6 +252,26 @@ function profileLinkCard(x){
   if(x.pending)return '<div class="profile-link-card profile-link-pending" aria-disabled="true"><strong>'+x.label+'</strong><span>'+x.description[lang]+'</span><em>'+(lang==='en'?'Profile link coming soon':'Tautan profil akan ditambahkan')+'</em></div>';
   return '<a class="profile-link-card" href="'+x.url+'" target="_blank" rel="noreferrer"><strong>'+x.label+'</strong><span>'+x.description[lang]+'</span><b>↗</b></a>'
 }
+
+function newsItem(x){
+  return '<article class="news-item"><time>'+periodLabel(x.date)+'</time><div><h4>'+x.title[lang]+'</h4><p>'+x.description[lang]+'</p></div></article>';
+}
+function interestCard(x){
+  return '<article class="interest-card"><h4>'+x.title[lang]+'</h4><div class="tags">'+x.items[lang].map(i=>'<span class="tag">'+i+'</span>').join('')+'</div></article>';
+}
+function selectedResultCard(x){
+  return '<article class="result-highlight"><h4>'+x.title[lang]+'</h4><div class="result-formula">'+x.formula+'</div><p>'+x.description[lang]+'</p><a class="text-link" href="'+x.link+'">'+(lang==='en'?'Read research':'Baca riset')+' →</a></article>';
+}
+function questionCard(x,i){
+  return '<article class="question-card"><span>0'+(i+1)+'</span><p>'+x[lang]+'</p></article>';
+}
+function talkCard(x){
+  const title=typeof x.title==='string'?x.title:x.title[lang];
+  return '<article class="talk-card"><div class="card-status-row"><div class="kicker">'+periodLabel(x.date)+'</div>'+statusBadge(x.status)+'</div><h4>'+title+'</h4><p>'+x.event[lang]+'</p>'+(x.link?'<div class="link-row"><a class="btn btn-secondary" href="'+x.link+'" target="_blank" rel="noreferrer">'+(lang==='en'?'Event page':'Halaman acara')+' ↗</a></div>':'')+'</article>';
+}
+function featuredDMath(){
+  return '<article class="featured-dmath"><div class="featured-dmath-copy"><div class="eyebrow">FEATURED PROJECT</div><h4>DMath Learning</h4><p>'+(lang==='en'?'A growing mathematics-learning platform for structured materials, guided practice, large problem banks, olympiad preparation, and university mathematics resources.':'Platform pembelajaran matematika yang terus berkembang untuk materi terstruktur, latihan terpandu, bank soal besar, persiapan olimpiade, dan sumber belajar matematika universitas.')+'</p><div class="tags"><span class="tag">Mathematics Education</span><span class="tag">Problem Bank</span><span class="tag">Olympiad</span><span class="tag">ON-MIPA</span></div><div class="link-row"><a class="btn btn-primary" href="https://dmath-learning.vercel.app/" target="_blank" rel="noreferrer">'+(lang==='en'?'Visit DMath Learning':'Kunjungi DMath Learning')+' ↗</a></div></div><div class="featured-dmath-mark"><img src="/portfolio-logo.jpg" alt="DMath Learning visual mark"></div></article>';
+}
 function render(){nav();applyTheme();$('#langLabel').textContent=lang==='en'?'ID':'EN';$('#footerTagline').textContent=lang==='en'?'Mathematics · Research · Education':'Matematika · Riset · Pendidikan';document.documentElement.lang=lang;const u=ui[lang];
 $('#app').innerHTML=
 '<section class="hero anchor" id="home"><div class="container hero-grid"><div><div class="eyebrow">'+u.heroEyebrow+'</div><h1>Desca Affajry Rais</h1><h2>'+u.heroTitle+'</h2><p>'+u.heroText+'</p><div class="hero-actions"><a class="btn btn-primary" href="#publications">'+u.explore+' →</a><a class="btn btn-secondary" href="#projects">'+u.viewProjects+'</a><a class="btn btn-secondary" href="'+profile.linkedin+'" target="_blank" rel="noreferrer">LinkedIn</a><a class="btn btn-secondary" href="/cv.html">'+(lang==='en'?'View CV':'Lihat CV')+'</a></div><div class="hero-meta"><span><i class="dot"></i> Universitas Diponegoro · Mathematics</span><span><i class="dot"></i> GPA 3.92 / 4.00</span><span><i class="dot"></i> '+profile.location[lang]+'</span></div></div><div class="portrait"><img class="profile-photo" src="/profile-photo.jpg?v=20260930-photo" alt="Desca Affajry Rais"></div></div></section>'
