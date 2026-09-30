@@ -269,3 +269,40 @@
   font-weight:800;
   background:var(--light);
 }
+
+/* === News, research highlights, talks, and featured DMath === */
+.brand{display:inline-flex;align-items:center;gap:10px}
+.brand-mark{width:34px;height:34px;border-radius:9px;object-fit:cover;border:1px solid var(--line);background:white}
+.news-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.news-item{display:grid;grid-template-columns:130px 1fr;gap:22px;padding:18px 0;border-bottom:1px solid var(--line)}
+.news-item time{font-size:.8rem;font-weight:800;color:var(--blue);letter-spacing:.03em;text-transform:uppercase}
+.news-item h4{margin:0 0 5px;color:var(--deep);font-size:1rem}
+.news-item p{margin:0;color:var(--muted);font-size:.9rem}
+.interest-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.interest-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--white)}
+.interest-card h4{margin:0 0 14px;color:var(--deep)}
+.question-grid{display:grid;gap:10px}
+.question-card{display:grid;grid-template-columns:48px 1fr;gap:15px;align-items:start;border:1px solid var(--line);border-radius:13px;padding:16px 18px;background:var(--white)}
+.question-card>span{font-family:Georgia,serif;font-size:1.25rem;color:var(--blue);font-weight:800}
+.question-card p{margin:0;color:var(--text);font-size:.95rem}
+.result-highlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.result-highlight{border:1px solid var(--line);border-radius:15px;padding:20px;background:var(--white);overflow:hidden}
+.result-highlight h4{margin:0;color:var(--deep);font-size:1rem}
+.result-formula{margin:16px 0;padding:15px;border-radius:10px;background:var(--light);overflow-x:auto;text-align:center;font-size:1.04rem}
+.result-highlight p{margin:0 0 12px;color:var(--muted);font-size:.87rem}
+.text-link{font-size:.84rem;font-weight:800;color:var(--blue)}
+.featured-project-wrap{margin-bottom:20px}
+.featured-dmath{display:grid;grid-template-columns:1fr 240px;gap:28px;align-items:center;padding:30px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(135deg,var(--white),var(--light));box-shadow:var(--shadow)}
+.featured-dmath h4{font-size:1.7rem;margin:5px 0 10px;color:var(--deep)}
+.featured-dmath p{margin:0;color:var(--muted);max-width:760px}
+.featured-dmath-mark{display:flex;justify-content:center}
+.featured-dmath-mark img{width:190px;height:190px;object-fit:cover;border-radius:24px;box-shadow:0 16px 38px rgba(6,27,62,.16)}
+.grid-talks{grid-template-columns:repeat(3,minmax(0,1fr))}
+.talk-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--white)}
+.talk-card h4{margin:6px 0 8px;color:var(--deep);font-size:1rem}
+.talk-card p{margin:0;color:var(--muted);font-size:.88rem}
+[data-theme="dark"] .interest-card,[data-theme="dark"] .question-card,[data-theme="dark"] .result-highlight,[data-theme="dark"] .talk-card{background:#0d1a2b;border-color:#233851}
+[data-theme="dark"] .featured-dmath{background:linear-gradient(135deg,#0d1a2b,#111f32);border-color:#233851}
+[data-theme="dark"] .news-item h4,[data-theme="dark"] .interest-card h4,[data-theme="dark"] .result-highlight h4,[data-theme="dark"] .talk-card h4,[data-theme="dark"] .question-card p{color:#eef6ff}
+@media(max-width:900px){.interest-grid,.result-highlight-grid,.grid-talks{grid-template-columns:1fr 1fr}.featured-dmath{grid-template-columns:1fr}.featured-dmath-mark{justify-content:flex-start}}
+@media(max-width:620px){.news-item{grid-template-columns:1fr;gap:6px}.interest-grid,.result-highlight-grid,.grid-talks{grid-template-columns:1fr}.featured-dmath{padding:22px}.featured-dmath-mark img{width:140px;height:140px}}
