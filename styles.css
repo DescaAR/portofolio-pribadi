@@ -306,3 +306,47 @@
 [data-theme="dark"] .news-item h4,[data-theme="dark"] .interest-card h4,[data-theme="dark"] .result-highlight h4,[data-theme="dark"] .talk-card h4,[data-theme="dark"] .question-card p{color:#eef6ff}
 @media(max-width:900px){.interest-grid,.result-highlight-grid,.grid-talks{grid-template-columns:1fr 1fr}.featured-dmath{grid-template-columns:1fr}.featured-dmath-mark{justify-content:flex-start}}
 @media(max-width:620px){.news-item{grid-template-columns:1fr;gap:6px}.interest-grid,.result-highlight-grid,.grid-talks{grid-template-columns:1fr}.featured-dmath{padding:22px}.featured-dmath-mark img{width:140px;height:140px}}
+
+/* === Simplified featured DMath card === */
+.featured-project-wrap{
+  margin:0 0 26px;
+}
+.featured-dmath{
+  display:block !important;
+  width:100% !important;
+  padding:30px 32px !important;
+  border:1.5px solid var(--line) !important;
+  border-radius:18px !important;
+  background:linear-gradient(135deg,var(--white),var(--light)) !important;
+  box-shadow:0 14px 36px rgba(6,27,62,.08) !important;
+}
+.featured-dmath-copy{
+  width:100%;
+  max-width:none;
+}
+.featured-dmath .eyebrow{
+  margin-bottom:8px;
+}
+.featured-dmath h4{
+  margin:0 0 10px;
+  font-size:1.65rem;
+}
+.featured-dmath .tags{
+  margin-top:18px;
+}
+.featured-dmath .link-row{
+  margin-top:20px;
+}
+.featured-dmath-mark{
+  display:none !important;
+}
+[data-theme="dark"] .featured-dmath{
+  background:linear-gradient(135deg,#0d1a2b,#111f32) !important;
+  border-color:#29415e !important;
+  box-shadow:none !important;
+}
+@media(max-width:620px){
+  .featured-dmath{
+    padding:22px !important;
+  }
+}
