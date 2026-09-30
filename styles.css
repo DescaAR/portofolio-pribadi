@@ -130,3 +130,33 @@
   position:relative!important;
   z-index:5!important;
 }
+
+/* === Extended academic portfolio sections === */
+.grid-2-focus{grid-template-columns:repeat(2,minmax(0,1fr))}
+.focus-card h4{font-size:1.1rem}
+.research-timeline{position:relative;display:grid;gap:0;margin-top:8px}
+.research-timeline:before{content:"";position:absolute;left:52px;top:12px;bottom:12px;width:1px;background:var(--line)}
+.research-timeline-item{position:relative;display:grid;grid-template-columns:86px 1fr;gap:24px;padding:18px 0}
+.research-timeline-item:before{content:"";position:absolute;left:47px;top:27px;width:11px;height:11px;border:3px solid var(--white);border-radius:50%;background:var(--blue);box-shadow:0 0 0 1px var(--line)}
+.research-year{font-size:.78rem;font-weight:850;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;padding-top:4px}
+.research-timeline-item h4{margin:0;color:var(--deep);font-size:1rem}
+.research-timeline-item p{margin:7px 0 0;color:var(--muted);font-size:.9rem}
+.grid-academic-materials{grid-template-columns:repeat(2,minmax(0,1fr))}
+.academic-material-card .link-row{margin-top:16px}
+.grid-teaching{grid-template-columns:repeat(2,minmax(0,1fr))}
+.teaching-card .tags{margin-top:18px}
+.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.resource-panel{border:1px solid var(--line);border-radius:16px;background:var(--white);padding:24px}
+.resource-panel h4{margin:0 0 8px;color:var(--deep);font-size:1.15rem}
+.resource-panel p{margin:0;color:var(--muted);font-size:.92rem}
+.profile-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.profile-link-card{position:relative;display:flex;flex-direction:column;gap:5px;border:1px solid var(--line);border-radius:14px;background:var(--white);padding:18px 42px 18px 18px;transition:.2s ease}
+.profile-link-card:hover{transform:translateY(-2px);border-color:var(--blue);box-shadow:var(--shadow)}
+.profile-link-card strong{color:var(--deep)}
+.profile-link-card span{font-size:.83rem;color:var(--muted)}
+.profile-link-card b{position:absolute;right:16px;top:16px;color:var(--blue)}
+[data-theme="dark"] .research-timeline-item:before{border-color:#08111f}
+[data-theme="dark"] .resource-panel,[data-theme="dark"] .profile-link-card{background:#0d1a2b;border-color:#233851}
+[data-theme="dark"] .resource-panel h4,[data-theme="dark"] .profile-link-card strong,[data-theme="dark"] .research-timeline-item h4{color:#eef6ff}
+@media(max-width:900px){.grid-2-focus,.grid-academic-materials,.grid-teaching,.resource-grid{grid-template-columns:1fr}.profile-links{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.profile-links{grid-template-columns:1fr}.research-timeline-item{grid-template-columns:70px 1fr;gap:16px}.research-timeline:before{left:40px}.research-timeline-item:before{left:35px}}
