@@ -107,7 +107,26 @@ function medal(){return '<svg viewBox="0 0 64 64" aria-hidden="true"><path fill=
 function ribbon(){return '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="17" fill="currentColor"/><path fill="currentColor" d="m21 38-4 22 15-9 15 9-4-22a23 23 0 0 1-22 0Z" opacity=".8"/><path fill="white" opacity=".65" d="m32 13 3.2 6.5 7.2 1-5.2 5.1 1.2 7.2-6.4-3.4-6.4 3.4 1.2-7.2-5.2-5.1 7.2-1L32 13Z"/></svg>'}
 function badge(){return '<svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M32 4 40 12l11-1 2 11 7 10-7 10-2 11-11-1-8 8-8-8-11 1-2-11-7-10 7-10 2-11 11 1 8-8Z"/><text x="32" y="37" text-anchor="middle" font-size="15" font-weight="900" fill="white">TOP</text></svg>'}
 function iconType(type){if(type==='trophy-gold')return['gold',trophy()];if(type==='trophy-silver')return['silver',trophy()];if(type==='trophy-bronze')return['bronze',trophy()];if(type==='medal-gold')return['gold',medal()];if(type==='medal-silver')return['silver',medal()];if(type==='medal-bronze')return['bronze',medal()];if(type==='top')return['top',badge()];return['honour',ribbon()]}
-function typeLabel(type){const map={en:{'trophy-gold':'1st Place','trophy-silver':'2nd Place','trophy-bronze':'3rd Place','medal-gold':'Gold Medal / Award','medal-silver':'Silver Medal / Award','medal-bronze':'Bronze Medal','honour':'Honour / Mention','finalist':'Finalist','top':'Top 10'},id:{'trophy-gold':'Juara 1','trophy-silver':'Juara 2','trophy-bronze':'Juara 3','medal-gold':'Medali / Award Emas','medal-silver':'Medali / Award Perak','medal-bronze':'Medali Perunggu','honour':'Honour / Harapan','finalist':'Finalis','top':'Top 10'}};return map[lang][type]||map[lang].honour}
+function awardLabel(a){
+  const t=a.title;
+  const pairs=[
+    [/^4th Place \(Honorable Mention 1\)/,{en:'4th Place · Honorable Mention 1',id:'Peringkat 4 · Harapan 1'}],
+    [/^Special Honour Participant/,{en:'Special Honour',id:'Penghargaan Khusus'}],
+    [/^Gold Medalist/,{en:'Gold Medal',id:'Medali Emas'}],
+    [/^Silver Medalist/,{en:'Silver Medal',id:'Medali Perak'}],
+    [/^Bronze Medalist/,{en:'Bronze Medal',id:'Medali Perunggu'}],
+    [/^Gold Award/,{en:'Gold Award',id:'Penghargaan Emas'}],
+    [/^Silver Award/,{en:'Silver Award',id:'Penghargaan Perak'}],
+    [/^1st Place/,{en:'1st Place',id:'Juara 1'}],
+    [/^2nd Place/,{en:'2nd Place',id:'Juara 2'}],
+    [/^3rd Place/,{en:'3rd Place',id:'Juara 3'}],
+    [/^4th Place/,{en:'4th Place',id:'Peringkat 4'}],
+    [/^Finalist/,{en:'Finalist',id:'Finalis'}],
+    [/^Top 10/,{en:'Top 10',id:'Top 10'}]
+  ];
+  for(const [re,label] of pairs)if(re.test(t))return label[lang];
+  return lang==='en'?'Honour':'Penghargaan';
+}
 const statusLabels={en:{completed:'Completed',ongoing:'Ongoing',draft:'Draft',planned:'Planned',presented:'Presented',published:'Published',review:'Under Review',manuscript:'Manuscript Complete'},id:{completed:'Selesai',ongoing:'Berlangsung',draft:'Draft',planned:'Direncanakan',presented:'Dipresentasikan',published:'Terbit',review:'Dalam Review',manuscript:'Manuskrip Selesai'}};
 function statusBadge(key){return '<span class="status status-'+key+'">'+statusLabels[lang][key]+'</span>'}
 function periodStatus(period){return /Present|Sekarang/i.test(period)?'ongoing':'completed'}
@@ -186,9 +205,13 @@ function periodLabel(x){
 function roleLabel(x){return lang==='id'?(roleTranslations[x]||x):x}
 function committeeRoleLabel(x){return lang==='id'?(committeeRoleTranslations[x]||x):x}
 function skillLabel(x){return lang==='id'?(skillTranslations[x]||x):x}
-function competitionTitle(a){let t=a.title.replace(/^(1st Place|2nd Place|3rd Place|Gold Medalist|Silver Medalist|Bronze Medalist|Gold Award|Silver Award|Special Honour Participant|4th Place \(Honorable Mention 1\)|4th Place|Finalist|Top 10)\s*[·-]?\s*/,'');t=t.replace(/ in Mathematics$/,'');return t+(lang==='id'&&/Mathematics/.test(a.title)?' · Matematika':'')}
+function competitionTitle(a){
+  return a.title
+    .replace(/^(1st Place|2nd Place|3rd Place|Gold Medalist|Silver Medalist|Bronze Medalist|Gold Award|Silver Award|Special Honour Participant|4th Place \(Honorable Mention 1\)|4th Place|Finalist|Top 10)\s*[·-]?\s*/,'')
+    .replace(/ in Mathematics$/,'');
+}
 function timeline(items){return '<div class="timeline">'+items.map(x=>'<article class="timeline-item"><time>'+periodLabel(x.period)+'</time><div><div class="item-topline"><h4>'+roleLabel(x.role)+'</h4>'+statusBadge(x.status||periodStatus(x.period))+'</div><div class="org">'+organizationLabel(x.org)+(x.place?' · '+x.place:'')+'</div>'+bullets(x.bullets[lang])+'</div></article>').join('')+'</div>'}
-function awardHTML(a){const [cls,svg]=iconType(a.type);return '<article class="award-card" data-year="'+a.year+'"><div class="award-icon '+cls+'">'+svg+'</div><div><h4>'+competitionTitle(a)+'</h4><p>'+a.org+' · '+a.date+'</p><span class="award-type">'+typeLabel(a.type)+'</span></div></article>'}
+function awardHTML(a){const [cls,svg]=iconType(a.type);return '<article class="award-card" data-year="'+a.year+'"><div class="award-icon '+cls+'">'+svg+'</div><div><h4>'+competitionTitle(a)+'</h4><p>'+a.org+' · '+periodLabel(a.date)+'</p><span class="award-type">'+awardLabel(a)+'</span></div></article>'}
 function projectCard(p){return '<article class="card project-card" data-project="'+p.id+'" tabindex="0" role="button"><div class="card-status-row"><div class="kicker">'+(lang==='en'?'PROJECT':'PROYEK')+' · '+projectCategoryLabel(p.category)+' · '+p.year+'</div>'+statusBadge(p.status||'completed')+'</div><h4>'+p.title+'</h4><p>'+p.summary[lang]+'</p><div class="tags">'+p.tools.slice(0,4).map(t=>'<span class="tag">'+t+'</span>').join('')+'</div><div class="project-result">'+ui[lang].showDetails+' →</div></article>'}
 function focusCard(x){return '<article class="card focus-card"><div class="card-status-row"><div class="kicker">'+x.title[lang]+'</div>'+statusBadge(x.status)+'</div><h4>'+x.subtitle[lang]+'</h4><p>'+x.description[lang]+'</p></article>'}
 function researchTimelineItem(x){return '<article class="research-timeline-item"><div class="research-year">'+(typeof x.year==='string'?x.year:x.year[lang])+'</div><div><div class="item-topline"><h4>'+x.title[lang]+'</h4>'+statusBadge(x.status)+'</div><p>'+x.description[lang]+'</p></div></article>'}
