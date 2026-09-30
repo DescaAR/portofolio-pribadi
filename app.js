@@ -37,6 +37,37 @@ const academicMaterials=[
 {status:'planned',level:{en:'ON-MIPA · Real Analysis',id:'ON-MIPA · Analisis Real'},title:{en:'Real Analysis for ON-MIPA',id:'Analisis Real ON-MIPA'},description:{en:'Completeness, sequences, continuity, Riemann integration, and uniform convergence.',id:'Kelengkapan, barisan, kekontinuan, integral Riemann, dan konvergensi seragam.'}}
 ];
 
+const newsUpdates=[
+{date:'Sep 2026',title:{en:'Started a new distance-spectra research project',id:'Memulai proyek riset baru tentang spektrum jarak'},description:{en:'Began work on the distance spectrum of $K_n \\odot P_m$ using block matrices and invariant subspaces.',id:'Memulai kajian spektrum jarak $K_n \\odot P_m$ menggunakan matriks blok dan subruang invarian.'}},
+{date:'Sep 2026',title:{en:'Completed the first-edition manuscript of Inequality Problem Solving Book',id:'Menyelesaikan manuskrip edisi pertama Inequality Problem Solving Book'},description:{en:'The book manuscript is complete and prepared for a planned HKI registration process.',id:'Manuskrip buku telah selesai dan disiapkan untuk rencana proses pendaftaran HKI.'}},
+{date:'Jul 2026',title:{en:'Silver Medal — Isaac Newton Competition 2026',id:'Medali Perak — Isaac Newton Competition 2026'},description:{en:'Received a silver medal in mathematics.',id:'Meraih medali perak pada bidang matematika.'}},
+{date:'Apr 2026',title:{en:'1st Place — ON-MIPA UNDIP Selection 2026',id:'Juara 1 — Seleksi ON-MIPA UNDIP 2026'},description:{en:'Selected as an UNDIP mathematics representative after placing first in the internal selection.',id:'Terpilih sebagai wakil Matematika UNDIP setelah meraih peringkat pertama pada seleksi internal.'}}
+];
+
+const researchInterests=[
+{title:{en:'Primary Interests',id:'Minat Utama'},items:{en:['Real Analysis','Complex Analysis','Graph Theory','Combinatorics','Abstract Algebra','Topology'],id:['Analisis Real','Analisis Kompleks','Teori Graf','Kombinatorika','Struktur Aljabar','Topologi']}},
+{title:{en:'Current Research Directions',id:'Arah Riset Saat Ini'},items:{en:['Alexandroff topology on directed graphs','Distance spectra of corona graphs','Graph labeling'],id:['Topologi Alexandroff pada graf berarah','Spektrum jarak graf korona','Pelabelan graf']}},
+{title:{en:'Graduate Research Direction',id:'Arah Riset Pascasarjana'},items:{en:['Analysis','Combinatorics','Pure mathematics with rigorous proof-oriented methods'],id:['Analisis','Kombinatorika','Matematika murni dengan pendekatan berbasis pembuktian rigor']}}
+];
+
+const selectedResults=[
+{title:{en:'Modular total edge irregularity strength of $C_4 \\odot \\overline{K}_n$',id:'Modular total edge irregularity strength dari $C_4 \\odot \\overline{K}_n$'},formula:'$\\operatorname{mtes}(C_4 \\odot \\overline{K}_n)=\\left\\lceil\\frac{4n+6}{3}\\right\\rceil$',description:{en:'Exact value established through explicit modular total edge irregular labelings.',id:'Nilai eksak diperoleh melalui konstruksi pelabelan modular total edge irregular secara eksplisit.'},link:'/publications/modular-total-edge-irregular-labeling'},
+{title:{en:'Modular total edge irregularity strength of $C_4 \\odot P_n$',id:'Modular total edge irregularity strength dari $C_4 \\odot P_n$'},formula:'$\\operatorname{mtes}(C_4 \\odot P_n)=\\left\\lceil\\frac{8n+2}{3}\\right\\rceil$',description:{en:'A closed-form result valid for every $n\\ge1$.',id:'Hasil bentuk tertutup yang berlaku untuk setiap $n\\ge1$.'},link:'/publications/modular-total-edge-irregular-labeling'},
+{title:{en:'Connectivity of finite Alexandroff spaces',id:'Keterhubungan ruang Alexandroff hingga'},formula:'$(X,\\tau)\\text{ connected }\\Longleftrightarrow \\Gamma(X,\\tau)\\text{ connected}$',description:{en:'Connectivity can be characterized through the Minimal Open Neighborhood Intersection Graph.',id:'Keterhubungan dapat dikarakterisasi melalui Minimal Open Neighborhood Intersection Graph.'},link:'/publications/int-graphic-topology-connectivity'}
+];
+
+const researchQuestions=[
+{en:'How does the structure of a finite directed graph determine the connectivity of its associated int-graphic topology?',id:'Bagaimana struktur graf berarah hingga menentukan keterhubungan topologi int-graphic yang berasosiasi dengannya?'},
+{en:'How can distance spectra of corona graphs be characterized when the attached graph is nonregular?',id:'Bagaimana spektrum jarak graf korona dapat dikarakterisasi ketika graf yang ditempelkan tidak reguler?'},
+{en:'Which combinatorial constructions yield exact irregularity-strength values for structured graph families?',id:'Konstruksi kombinatorial apa yang menghasilkan nilai exact irregularity strength untuk keluarga graf terstruktur?'}
+];
+
+const talks=[
+{date:'2026',title:'Modular Total Edge Irregular Labeling of Corona Product of Cycle $C_4$ with Path and Null Graphs',event:{en:'The 16th ISNPINSA · Oral Presentation',id:'ISNPINSA ke-16 · Presentasi Oral'},status:'presented',link:'https://isnpinsa.undip.ac.id/post/about-conference'},
+{date:'2026',title:{en:'Real Analysis Tutorials',id:'Tutorial Analisis Real'},event:{en:'Asosiasi Matematika Terapan UNDIP',id:'Asosiasi Matematika Terapan UNDIP'},status:'completed'},
+{date:'2026',title:{en:'Mathematics Olympiad Training Sessions',id:'Sesi Pembinaan Olimpiade Matematika'},event:{en:'KOMIPA UNDIP',id:'KOMIPA UNDIP'},status:'ongoing'}
+];
+
 const academicProfiles=[
 {label:'Google Scholar',url:null,homepage:'https://scholar.google.com/',description:{en:'Academic citations and publication profile',id:'Profil sitasi dan publikasi akademik'},pending:true},
 {label:'ORCID',url:null,homepage:'https://orcid.org/',description:{en:'Persistent researcher identifier',id:'Identitas peneliti yang persisten'},pending:true},
