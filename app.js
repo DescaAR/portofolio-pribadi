@@ -122,17 +122,21 @@ function setActiveSection(id){
 }
 function syncSectionFromScroll(){
   if(document.body.classList.contains('modal-open'))return;
-  const sections=[...document.querySelectorAll('section.anchor[id]')];
+  const ids=[...document.querySelectorAll('#desktopNav a')]
+    .map(a=>(a.getAttribute('href')||'').replace('#',''))
+    .filter(Boolean);
+  const sections=ids.map(id=>document.getElementById(id)).filter(Boolean);
   if(!sections.length)return;
   const navEl=document.querySelector('.nav');
   const offset=(navEl?navEl.getBoundingClientRect().height:72)+42;
-  let current=sections[0];
+  let current=null;
   for(const section of sections){
     if(section.getBoundingClientRect().top<=offset)current=section;
     else break;
   }
+  if(!current)return;
   const id=current.id;
-  if(id&&location.hash!=='#'+id)history.replaceState(null,'','#'+id);
+  if(location.hash!=='#'+id)history.replaceState(null,'','#'+id);
   setActiveSection(id);
 }
 function initScrollSpy(){
