@@ -208,3 +208,33 @@
     text-align:left;
   }
 }
+
+/* Contact academic profile links */
+.contact-profile-links{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  flex-wrap:wrap;
+  max-width:68%;
+}
+.contact-profile-links a{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 8px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:var(--blue);
+  font-size:.76rem;
+  font-weight:800;
+  background:var(--white);
+}
+.contact-profile-links a:hover{
+  border-color:var(--blue);
+  transform:translateY(-1px);
+}
+@media(max-width:720px){
+  .contact-profile-links{
+    justify-content:flex-start;
+    max-width:100%;
+  }
+}
