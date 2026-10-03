@@ -1333,3 +1333,133 @@ body{
     background-size:cover;
   }
 }
+
+
+/* === Secondary text contrast audit 2026-10 === */
+
+/* Global secondary text is darker and more legible */
+:root{
+  --muted:#475569;
+  --muted-soft:#64748b;
+  --meta:#5b6b80;
+}
+
+/* Body copy and section descriptions */
+.hero p,
+.head p,
+.intro-copy p,
+.card p,
+.timeline-item p,
+.edu-card p,
+.resource-panel p,
+.profile-link-card span,
+.contact-row span:first-child,
+.research-summary p,
+.research-card .research-note,
+.award-card p,
+.cert-item span,
+.compact-item span,
+.project-result,
+.modal p,
+.modal li{
+  color:var(--muted);
+}
+
+/* Metadata remains slightly softer than body copy */
+.timeline-item time,
+.edu-card time,
+.stat span,
+.card .kicker,
+.research-label,
+.pub-meta strong,
+.news-item time,
+.award-type,
+.hero-meta,
+.profile-link-pending em,
+.contact-profile-placeholder{
+  color:var(--meta);
+}
+
+/* Important secondary text should not look disabled */
+.research-authors,
+.timeline-item .org,
+.contact-row a,
+.text-link,
+.profile-link-card strong{
+  opacity:1;
+}
+
+/* About body gets stronger contrast */
+#about .intro-copy p{
+  color:#40516a;
+}
+
+/* Publications */
+#publications .research-summary p{
+  color:#46566d;
+}
+#publications .research-authors{
+  color:#263a58;
+}
+
+/* Projects and teaching */
+#projects .project-card p,
+#teaching .teaching-card p{
+  color:#46576f;
+}
+
+/* Experience */
+#experience .timeline-item p,
+#experience .compact-item span,
+#experience .card p,
+#experience .cert-item span{
+  color:#4b5c73;
+}
+
+/* Achievements */
+#achievements .award-card p{
+  color:#516076;
+}
+
+/* Resources and contact */
+#resources .resource-panel p,
+#resources .profile-link-card span,
+#contact .contact-row span:first-child{
+  color:#4b5c73;
+}
+
+/* Disabled buttons remain visibly disabled, but still readable */
+.btn-disabled{
+  opacity:.66;
+  color:#536176;
+}
+
+/* Dark mode: raise muted contrast without making everything white */
+[data-theme="dark"]{
+  --muted:#b6c4d7;
+  --muted-soft:#96a9c0;
+  --meta:#9fb2c9;
+}
+[data-theme="dark"] #about .intro-copy p,
+[data-theme="dark"] #publications .research-summary p,
+[data-theme="dark"] #projects .project-card p,
+[data-theme="dark"] #teaching .teaching-card p,
+[data-theme="dark"] #experience .timeline-item p,
+[data-theme="dark"] #experience .compact-item span,
+[data-theme="dark"] #experience .card p,
+[data-theme="dark"] #experience .cert-item span,
+[data-theme="dark"] #achievements .award-card p,
+[data-theme="dark"] #resources .resource-panel p,
+[data-theme="dark"] #resources .profile-link-card span,
+[data-theme="dark"] #contact .contact-row span:first-child{
+  color:#b6c4d7;
+}
+
+/* Small-screen readability */
+@media(max-width:650px){
+  .card p,
+  .timeline-item p,
+  .intro-copy p{
+    line-height:1.62;
+  }
+}
