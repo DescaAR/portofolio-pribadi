@@ -1139,3 +1139,197 @@ body{
     font-size:1.3rem;
   }
 }
+
+
+/* === Harmonized blue gradient system 2026-10 === */
+
+/* Shared light palette */
+:root{
+  --bg-a:#f8fbff;
+  --bg-b:#eef5fb;
+  --bg-c:#e6f0fa;
+  --bg-d:#dbe9f8;
+  --bg-e:#cfe2f7;
+}
+
+/* Smooth overall canvas */
+body{
+  background:
+    radial-gradient(circle at 15% 6%,rgba(21,101,216,.07),transparent 24rem),
+    linear-gradient(180deg,#f9fcff 0%,#eef5fb 100%);
+}
+
+/* Hero: crisp and airy */
+.hero{
+  background:
+    radial-gradient(circle at 82% 22%,rgba(0,194,255,.14),transparent 22rem),
+    radial-gradient(circle at 10% 10%,rgba(21,101,216,.12),transparent 28rem),
+    linear-gradient(180deg,#ffffff 0%,#f6fbff 46%,#eaf3fb 100%);
+}
+
+/* Section backgrounds: one family, different intensity */
+#about{
+  background:
+    radial-gradient(circle at 12% 22%,rgba(21,101,216,.11),transparent 24rem),
+    linear-gradient(135deg,#f4f9ff 0%,#eaf3fb 52%,#e1edf8 100%);
+}
+
+#publications{
+  background:
+    radial-gradient(circle at 88% 10%,rgba(0,194,255,.12),transparent 22rem),
+    linear-gradient(135deg,#eaf4ff 0%,#ddebf8 50%,#edf5fb 100%);
+}
+
+#book{
+  background:
+    radial-gradient(circle at 16% 18%,rgba(21,101,216,.10),transparent 22rem),
+    radial-gradient(circle at 88% 75%,rgba(0,194,255,.07),transparent 20rem),
+    linear-gradient(135deg,#edf5fd 0%,#dfeaf7 50%,#e8f1fa 100%);
+}
+
+#projects{
+  background:
+    radial-gradient(circle at 90% 12%,rgba(21,101,216,.13),transparent 26rem),
+    linear-gradient(135deg,#e8f3ff 0%,#d7e8f8 48%,#e7f1fb 100%);
+}
+
+#teaching{
+  background:
+    radial-gradient(circle at 8% 78%,rgba(0,194,255,.07),transparent 20rem),
+    linear-gradient(135deg,#eef6fc 0%,#e1ecf6 50%,#edf4fa 100%);
+}
+
+#experience{
+  background:
+    radial-gradient(circle at 10% 8%,rgba(21,101,216,.09),transparent 22rem),
+    linear-gradient(135deg,#eaf3fb 0%,#dce9f5 48%,#eef5fa 100%);
+}
+
+#achievements{
+  background:
+    radial-gradient(circle at 90% 10%,rgba(21,101,216,.08),transparent 20rem),
+    radial-gradient(circle at 12% 86%,rgba(0,194,255,.055),transparent 18rem),
+    linear-gradient(135deg,#edf5fb 0%,#e2edf7 50%,#eef5fa 100%);
+}
+
+#resources{
+  background:
+    radial-gradient(circle at 86% 14%,rgba(0,194,255,.085),transparent 20rem),
+    linear-gradient(135deg,#eaf4fb 0%,#dceaf6 50%,#e8f2fa 100%);
+}
+
+#contact{
+  background:
+    radial-gradient(circle at 12% 16%,rgba(21,101,216,.085),transparent 18rem),
+    linear-gradient(135deg,#e8f2fb 0%,#dce9f5 50%,#edf5fb 100%);
+}
+
+/* Section transitions blend into each other */
+#about,
+#publications,
+#book,
+#projects,
+#teaching,
+#experience,
+#achievements,
+#resources,
+#contact{
+  position:relative;
+  overflow:hidden;
+}
+#about::after,
+#publications::after,
+#book::after,
+#projects::after,
+#teaching::after,
+#experience::after,
+#achievements::after,
+#resources::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:72px;
+  pointer-events:none;
+  background:linear-gradient(to bottom,transparent,rgba(255,255,255,.12));
+  opacity:.65;
+}
+
+/* Cards use slightly tinted glass instead of stark white */
+#about .stat,
+#publications .research-card,
+#book .book-card,
+#projects .project-card,
+#teaching .card,
+#experience .compact-item,
+#experience .card,
+#achievements .award-card,
+#resources .resource-panel,
+#resources .profile-link-card,
+#contact .contact-card{
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.84),
+    rgba(248,251,255,.72)
+  );
+  border-color:rgba(133,165,203,.24);
+}
+
+/* Preserve strong contrast for featured blocks */
+.featured-dmath{
+  background:
+    radial-gradient(circle at 92% 12%,rgba(0,194,255,.24),transparent 19rem),
+    linear-gradient(135deg,#071c42 0%,#0b3479 54%,#1565d8 100%)!important;
+}
+
+/* Skills remains the visual anchor */
+#skills{
+  background:
+    radial-gradient(circle at 84% 10%,rgba(0,194,255,.16),transparent 22rem),
+    linear-gradient(135deg,#061832 0%,#092a5d 55%,#0b3b78 100%)!important;
+}
+
+/* Dark mode: same rhythm, darker family */
+[data-theme="dark"] #about{
+  background:linear-gradient(135deg,#0b1727,#0f2137);
+}
+[data-theme="dark"] #publications{
+  background:linear-gradient(135deg,#0b1a2c,#102843);
+}
+[data-theme="dark"] #book{
+  background:linear-gradient(135deg,#0d1c2e,#13253b);
+}
+[data-theme="dark"] #projects{
+  background:linear-gradient(135deg,#0a1a2d,#0f2d4f);
+}
+[data-theme="dark"] #teaching{
+  background:linear-gradient(135deg,#0b1928,#11263b);
+}
+[data-theme="dark"] #experience{
+  background:linear-gradient(135deg,#0a1727,#102841);
+}
+[data-theme="dark"] #achievements{
+  background:linear-gradient(135deg,#0b1828,#11263b);
+}
+[data-theme="dark"] #resources{
+  background:linear-gradient(135deg,#0a192b,#102a46);
+}
+[data-theme="dark"] #contact{
+  background:linear-gradient(135deg,#091726,#10243a);
+}
+
+/* Mobile gradients stay visible */
+@media(max-width:650px){
+  #about,
+  #publications,
+  #book,
+  #projects,
+  #teaching,
+  #experience,
+  #achievements,
+  #resources,
+  #contact{
+    background-size:cover;
+  }
+}
