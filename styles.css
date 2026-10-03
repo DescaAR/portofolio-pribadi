@@ -851,3 +851,164 @@ body{
     transform:none!important;
   }
 }
+
+
+/* === Section color system: reduce white canvas === */
+
+body{
+  background:#eef4fa;
+}
+
+/* Main section backgrounds */
+#about{
+  background:
+    radial-gradient(circle at 12% 18%,rgba(21,101,216,.08),transparent 20rem),
+    linear-gradient(180deg,#f7fbff 0%,#eef5fb 100%);
+}
+#publications{
+  background:
+    radial-gradient(circle at 88% 8%,rgba(0,194,255,.08),transparent 18rem),
+    linear-gradient(180deg,#eaf3ff 0%,#f1f7fd 100%);
+}
+#book{
+  background:
+    radial-gradient(circle at 14% 20%,rgba(124,58,237,.07),transparent 18rem),
+    linear-gradient(180deg,#f4f1fb 0%,#edf3fb 100%);
+}
+#projects{
+  background:
+    radial-gradient(circle at 90% 12%,rgba(21,101,216,.09),transparent 22rem),
+    linear-gradient(180deg,#edf6ff 0%,#e7f0fb 100%);
+}
+#teaching{
+  background:
+    linear-gradient(180deg,#f4f8fc 0%,#eaf2f8 100%);
+}
+#experience{
+  background:
+    radial-gradient(circle at 7% 10%,rgba(0,194,255,.055),transparent 18rem),
+    linear-gradient(180deg,#edf4fb 0%,#f6f9fc 100%);
+}
+#achievements{
+  background:
+    radial-gradient(circle at 90% 6%,rgba(214,165,20,.06),transparent 17rem),
+    linear-gradient(180deg,#f9f7f0 0%,#eef4f9 100%);
+}
+#skills{
+  background:
+    linear-gradient(145deg,#071a38 0%,#0b2d62 58%,#0d3a78 100%)!important;
+}
+#resources{
+  background:
+    radial-gradient(circle at 86% 12%,rgba(21,101,216,.075),transparent 18rem),
+    linear-gradient(180deg,#edf5fc 0%,#e8f0f8 100%);
+}
+#contact{
+  background:
+    linear-gradient(180deg,#eaf2fa 0%,#f4f8fc 100%);
+}
+
+/* Give cards a soft tint instead of stark white */
+#about .stat,
+#publications .research-card,
+#projects .project-card,
+#teaching .card,
+#experience .compact-item,
+#experience .card,
+#achievements .award-card,
+#resources .resource-panel,
+#resources .profile-link-card,
+#contact .contact-card{
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+/* Book card gets its own warm/cool paper tone */
+#book .book-card{
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.88),rgba(239,242,252,.82));
+}
+
+/* Stronger separation between sections */
+.section{
+  border-top:1px solid rgba(143,169,201,.16);
+}
+.section:first-of-type{
+  border-top:0;
+}
+
+/* Skills section already dark, reinforce readable contrast */
+#skills .head h3,
+#skills .section-title,
+#skills .subsection h4,
+#skills .skill-category h4{
+  color:white!important;
+}
+#skills .head p,
+#skills p{
+  color:#b9c8dc!important;
+}
+#skills .chip{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.14);
+  color:#ecf5ff;
+}
+
+/* Slightly stronger container contrast */
+#projects>.container>.grid .project-card,
+#teaching .card,
+#achievements .award-card{
+  box-shadow:0 12px 30px rgba(6,27,62,.055);
+}
+
+/* Dark mode keeps distinct section rhythm too */
+[data-theme="dark"] body{
+  background:#07101d;
+}
+[data-theme="dark"] #about{
+  background:linear-gradient(180deg,#0b1626,#0d1b2e);
+}
+[data-theme="dark"] #publications{
+  background:linear-gradient(180deg,#0c1a2c,#10223a);
+}
+[data-theme="dark"] #book{
+  background:linear-gradient(180deg,#12182a,#101c2e);
+}
+[data-theme="dark"] #projects{
+  background:linear-gradient(180deg,#0b1a2d,#0d2340);
+}
+[data-theme="dark"] #teaching{
+  background:linear-gradient(180deg,#0c1828,#101d30);
+}
+[data-theme="dark"] #experience{
+  background:linear-gradient(180deg,#0a1727,#0f2034);
+}
+[data-theme="dark"] #achievements{
+  background:linear-gradient(180deg,#15170f,#111d2c);
+}
+[data-theme="dark"] #resources{
+  background:linear-gradient(180deg,#0c1a2c,#102138);
+}
+[data-theme="dark"] #contact{
+  background:linear-gradient(180deg,#0a1727,#0d1b2d);
+}
+[data-theme="dark"] #about .stat,
+[data-theme="dark"] #publications .research-card,
+[data-theme="dark"] #projects .project-card,
+[data-theme="dark"] #teaching .card,
+[data-theme="dark"] #experience .compact-item,
+[data-theme="dark"] #experience .card,
+[data-theme="dark"] #achievements .award-card,
+[data-theme="dark"] #resources .resource-panel,
+[data-theme="dark"] #resources .profile-link-card,
+[data-theme="dark"] #contact .contact-card{
+  background:rgba(13,26,43,.82);
+}
+
+/* Mobile: keep backgrounds visible without feeling busy */
+@media(max-width:650px){
+  #about,#publications,#book,#projects,#teaching,#experience,#achievements,#resources,#contact{
+    background-attachment:scroll;
+  }
+}
