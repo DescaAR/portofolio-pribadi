@@ -1505,3 +1505,16 @@ body{
 .card .kicker{
   color:var(--blue)!important;
 }
+
+
+/* === Wider section descriptions 2026-10 === */
+.head p{
+  width:100%;
+  max-width:1040px;
+  line-height:1.7;
+}
+@media(max-width:1100px){
+  .head p{
+    max-width:100%;
+  }
+}
