@@ -362,3 +362,5 @@
     grid-template-columns:1fr;
   }
 }
+
+.resource-grid-single{grid-template-columns:1fr}
