@@ -350,3 +350,15 @@
     padding:22px !important;
   }
 }
+
+
+/* === Projects: two-column desktop layout === */
+#projects > .container > .grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+@media(max-width:760px){
+  #projects > .container > .grid{
+    grid-template-columns:1fr;
+  }
+}
