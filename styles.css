@@ -364,3 +364,10 @@
 }
 
 .resource-grid-single{grid-template-columns:1fr}
+
+.btn-disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  pointer-events:none;
+  user-select:none;
+}
