@@ -3275,3 +3275,32 @@ body,
     transition:none!important;
   }
 }
+
+
+/* === Dark education: editorial rows, not cards === */
+[data-theme="dark"] #about .subsection .edu-card{
+  background:transparent!important;
+  border:0!important;
+  border-bottom:1px solid rgba(137,174,217,.12)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:28px 0;
+}
+[data-theme="dark"] #about .subsection .edu-card:last-child{
+  border-bottom:0!important;
+}
+[data-theme="dark"] #about .subsection .edu-card:hover{
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+[data-theme="dark"] #about .subsection .edu-card time{
+  color:#91a6be;
+}
+[data-theme="dark"] #about .subsection .edu-card h4{
+  color:#f2f7fd;
+}
+[data-theme="dark"] #about .subsection .edu-card p,
+[data-theme="dark"] #about .subsection .edu-card li{
+  color:#b5c4d7;
+}
