@@ -3353,3 +3353,41 @@ body,
 #projects .project-card-actions .project-result{
   margin-top:0;
 }
+
+
+/* Project card footer alignment */
+#projects .project-card{
+  display:flex;
+  flex-direction:column;
+}
+#projects .project-card-footer{
+  margin-top:auto;
+  padding-top:20px;
+}
+#projects .project-card-footer .tags{
+  margin-top:0;
+  min-height:66px;
+  align-content:flex-start;
+}
+#projects .project-card-footer .project-proof-links{
+  margin-top:12px;
+  margin-bottom:12px;
+  min-height:36px;
+  display:flex;
+  align-items:flex-start;
+}
+#projects .project-card-footer .project-proof-links-empty{
+  visibility:hidden;
+  pointer-events:none;
+}
+#projects .project-card-footer .project-result{
+  margin-top:0;
+}
+@media(max-width:650px){
+  #projects .project-card-footer .tags{
+    min-height:0;
+  }
+  #projects .project-card-footer .project-proof-links{
+    min-height:36px;
+  }
+}
