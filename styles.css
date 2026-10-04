@@ -3335,3 +3335,21 @@ body,
 [data-theme="dark"] .project-proof-link{background:#112a48;border-color:rgba(111,170,237,.17);color:#9ecfff}[data-theme="dark"] .project-proof-link:hover{background:#153354;border-color:rgba(111,170,237,.27)}
 @media(max-width:900px){.featured-dmath-layout{grid-template-columns:1fr}.featured-dmath-preview{max-width:600px}}
 @media(max-width:430px){.project-preview{min-height:160px;margin:-3px -3px 18px;padding:13px}.project-preview-metrics{gap:5px}.project-preview-metrics div{padding:7px}.project-preview-metrics span{display:none}.featured-dmath-preview{display:none}}
+
+
+/* Project card action alignment */
+#projects .project-card{
+  display:flex;
+  flex-direction:column;
+}
+#projects .project-card-actions{
+  margin-top:auto;
+  padding-top:18px;
+}
+#projects .project-card-actions .project-proof-links{
+  margin-top:0;
+  margin-bottom:12px;
+}
+#projects .project-card-actions .project-result{
+  margin-top:0;
+}
