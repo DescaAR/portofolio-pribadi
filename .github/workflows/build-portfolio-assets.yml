@@ -64,6 +64,7 @@ jobs:
           await page.pdf({
             path: 'cv-desca-affajry-rais.pdf',
             format: 'A4',
+            scale: 0.92,
             printBackground: true,
             preferCSSPageSize: true,
             margin: { top: '0mm', right: '0mm', bottom: '0mm', left: '0mm' }
