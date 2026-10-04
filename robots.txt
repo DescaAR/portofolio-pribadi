@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://descaar.github.io/portofolio-pribadi/sitemap.xml
