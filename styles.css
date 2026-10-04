@@ -2650,3 +2650,163 @@ body{
     transform:none!important;
   }
 }
+
+
+/* === Research identity, academic profiles, CV download, reading progress === */
+
+/* Reading progress */
+.reading-progress{
+  position:fixed;
+  inset:0 0 auto 0;
+  height:3px;
+  z-index:10000;
+  pointer-events:none;
+  background:transparent;
+}
+.reading-progress span{
+  display:block;
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#2467d6,#59bfff);
+  box-shadow:0 0 12px rgba(64,158,255,.28);
+  transition:width .08s linear;
+}
+
+/* Research identity */
+.research-identity{
+  margin:28px 0 30px;
+  padding:20px 22px;
+  border:1px solid rgba(66,104,150,.13);
+  border-radius:17px;
+  background:
+    radial-gradient(circle at 92% 10%,rgba(89,191,255,.08),transparent 12rem),
+    rgba(255,255,255,.58);
+}
+.research-identity-label{
+  margin-bottom:12px;
+  color:#2467d6;
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.research-identity-topics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.research-identity-topics span{
+  padding:8px 11px;
+  border:1px solid rgba(36,103,214,.13);
+  border-radius:10px;
+  background:#f4f8fd;
+  color:#244b78;
+  font-size:.82rem;
+  font-weight:700;
+}
+
+/* Resource / CV download */
+.resource-title-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:22px;
+}
+.resource-title-row p{
+  margin-top:8px;
+}
+.resource-badge{
+  flex:0 0 auto;
+  padding:7px 10px;
+  border:1px solid rgba(36,103,214,.14);
+  border-radius:999px;
+  background:#edf5ff;
+  color:#2467d6;
+  font-size:.7rem;
+  font-weight:850;
+  letter-spacing:.08em;
+}
+.profile-section-note{
+  max-width:820px;
+  margin:-5px 0 18px;
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.65;
+}
+
+/* Profile card status */
+.profile-card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:100%;
+}
+.profile-state{
+  flex:0 0 auto;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#edf1f6;
+  color:#6b7b90;
+  font-size:.67rem;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+.profile-state-live{
+  background:#e8f2ff;
+  color:#1f61ce;
+}
+.profile-link-pending{
+  opacity:.82;
+}
+.profile-link-card:hover .profile-state-live{
+  background:#dcecff;
+}
+
+/* Dark mode */
+[data-theme="dark"] .research-identity{
+  background:rgba(13,27,45,.78);
+  border-color:rgba(108,148,196,.17);
+}
+[data-theme="dark"] .research-identity-topics span{
+  background:#10243d;
+  border-color:rgba(108,148,196,.18);
+  color:#c9def6;
+}
+[data-theme="dark"] .resource-badge{
+  background:#10243d;
+  border-color:rgba(108,148,196,.18);
+  color:#9fcaff;
+}
+[data-theme="dark"] .profile-state{
+  background:#17283e;
+  color:#9eb0c6;
+}
+[data-theme="dark"] .profile-state-live{
+  background:#12315b;
+  color:#a9d3ff;
+}
+
+@media(max-width:430px){
+  .research-identity{
+    margin:22px 0 24px;
+    padding:17px;
+  }
+  .research-identity-topics{
+    gap:6px;
+  }
+  .research-identity-topics span{
+    padding:7px 9px;
+    font-size:.76rem;
+  }
+  .resource-title-row{
+    display:block;
+  }
+  .resource-badge{
+    display:inline-flex;
+    margin-top:14px;
+  }
+  .profile-card-head{
+    align-items:flex-start;
+  }
+}
