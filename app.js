@@ -214,23 +214,53 @@ function experiencePanel(){
 }
 function initRevealMotion(){
   const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const nodes=[...document.querySelectorAll('.head,.intro-grid>.intro-copy,.stat,.research-card,.book-card,.featured-dmath,#projects .project-card,.teaching-card,.experience-tabs,.experience-panel,.award-card,.skill-category,.resource-panel,.profile-link-card,.contact-shell')];
+  const selector=[
+    '.head',
+    '.intro-grid>.intro-copy',
+    '.research-identity',
+    '.stat',
+    '.edu-card',
+    '.research-card',
+    '.book-card',
+    '.featured-dmath',
+    '#projects .project-card',
+    '.teaching-card',
+    '.experience-tabs',
+    '.experience-panel .timeline-item',
+    '.experience-panel .compact-item',
+    '.experience-panel .card',
+    '.experience-panel .cert-item',
+    '.award-card',
+    '.skill-category',
+    '.resource-panel',
+    '.profile-link-card',
+    '.contact-shell'
+  ].join(',');
+  const nodes=[...document.querySelectorAll(selector)];
+
   nodes.forEach((el,i)=>{
     el.classList.add('reveal-item');
     el.style.setProperty('--reveal-delay',(i%4)*45+'ms');
   });
+
   if(reduce||!('IntersectionObserver' in window)){
     nodes.forEach(el=>el.classList.add('is-visible'));
     return;
   }
+
   const observer=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+      }else{
+        entry.target.classList.remove('is-visible');
       }
     });
-  },{threshold:.08,rootMargin:'0px 0px -28px 0px'});
+  },{
+    threshold:.12,
+    rootMargin:'-4% 0px -8% 0px'
+  });
+
   nodes.forEach(el=>observer.observe(el));
 }
 function timeline(items){return '<div class="timeline">'+items.map(x=>'<article class="timeline-item"><time>'+periodLabel(x.period)+'</time><div><div class="item-topline"><h4>'+roleLabel(x.role)+'</h4>'+statusBadge(x.status||periodStatus(x.period))+'</div><div class="org">'+organizationLabel(x.org)+(x.place?' · '+x.place:'')+'</div>'+bullets(x.bullets[lang])+'</div></article>').join('')+'</div>'}
