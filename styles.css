@@ -3407,3 +3407,47 @@ body,
 #projects .project-card-bottom .project-proof-link{min-height:44px;padding:9px 13px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
 @media(max-width:760px){#projects .project-card>h4,#projects .project-card>p,#projects .project-card-footer>.tags{min-height:0}}
 @media(max-width:430px){#projects .project-card-bottom{grid-template-columns:1fr}#projects .project-card-bottom .project-proof-links{justify-content:flex-start;grid-row:1}#projects .project-card-bottom .project-result{grid-row:2}}
+
+
+/* Academic transcript resource */
+.resource-panel-transcript{
+  display:flex;
+  flex-direction:column;
+}
+.resource-panel-transcript .link-row{
+  margin-top:auto;
+  padding-top:18px;
+}
+.resource-badge-pending{
+  opacity:.72;
+}
+.transcript-meta{
+  margin-top:22px;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(243,247,251,.75);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.transcript-meta span{
+  color:var(--muted);
+  font-size:.82rem;
+  font-weight:700;
+}
+.transcript-meta strong{
+  color:var(--deep);
+  font-size:1rem;
+}
+[data-theme="dark"] .transcript-meta{
+  background:rgba(17,31,50,.72);
+  border-color:rgba(135,171,213,.13);
+}
+[data-theme="dark"] .transcript-meta span{
+  color:#93a8bf;
+}
+[data-theme="dark"] .transcript-meta strong{
+  color:#edf6ff;
+}
