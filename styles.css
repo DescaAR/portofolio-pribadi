@@ -2104,3 +2104,10 @@ body{
     border-radius:19px!important;
   }
 }
+
+
+/* === Remove project corner arrow === */
+.project-card::after{
+  content:none!important;
+  display:none!important;
+}
