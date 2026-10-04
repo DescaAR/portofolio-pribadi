@@ -148,9 +148,7 @@ function scrollToSection(id,behavior='smooth'){
   if(!section)return;
   const nav=document.querySelector('.nav');
   const navHeight=nav?nav.getBoundingClientRect().height:74;
-  const target=section.querySelector('.head')||section.querySelector('.intro-grid')||section.querySelector(':scope > .container')||section;
-  const gap=0;
-  const top=Math.max(0,target.getBoundingClientRect().top+window.scrollY-navHeight-gap);
+  const top=Math.max(0,section.getBoundingClientRect().top+window.scrollY-navHeight);
   window.scrollTo({top,behavior});
   setActiveSection(id);
 }
