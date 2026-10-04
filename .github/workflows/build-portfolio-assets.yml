@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - gh-pages
-    paths-ignore:
-      - cv-desca-affajry-rais.pdf
-      - og-image.jpg
-      - cv-preview.jpg
+    paths:
+      - cv.html
+      - profile-photo.webp
+      - portfolio-logo.jpg
+      - .github/workflows/build-portfolio-assets.yml
   workflow_dispatch:
 
 permissions:
@@ -38,7 +39,7 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chromium
           python -m pip install --upgrade pip
-          python -m pip install pillow pymupdf
+          python -m pip install pillow
 
       - name: Start local portfolio server
         run: |
@@ -73,38 +74,6 @@ jobs:
           EOF
           node generate-cv.mjs
           rm -f generate-cv.mjs
-
-      - name: Generate temporary CV render preview
-        run: |
-          python <<'PY'
-          import fitz
-          from PIL import Image, ImageOps, ImageDraw
-          from io import BytesIO
-
-          doc = fitz.open("cv-desca-affajry-rais.pdf")
-          thumbs = []
-          for page in doc:
-              pix = page.get_pixmap(matrix=fitz.Matrix(1.15, 1.15), alpha=False)
-              im = Image.open(BytesIO(pix.tobytes("png"))).convert("RGB")
-              target_w = 430
-              target_h = round(im.height * target_w / im.width)
-              im = im.resize((target_w, target_h), Image.Resampling.LANCZOS)
-              im = ImageOps.expand(im, border=2, fill=(210,220,232))
-              thumbs.append(im)
-
-          gap = 18
-          bg = (235,241,248)
-          width = 2 * 434 + gap + 36
-          rows = (len(thumbs) + 1) // 2
-          height = rows * (thumbs[0].height + gap) + 36
-          sheet = Image.new("RGB", (width, height), bg)
-          for i, im in enumerate(thumbs):
-              x = 18 + (i % 2) * (434 + gap)
-              y = 18 + (i // 2) * (im.height + gap)
-              sheet.paste(im, (x, y))
-          sheet.save("cv-preview.jpg", "JPEG", quality=86, optimize=True)
-          print(f"CV pages: {len(doc)}")
-          PY
 
       - name: Generate social preview image
         run: |
@@ -171,7 +140,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cv-desca-affajry-rais.pdf og-image.jpg cv-preview.jpg
+          git add cv-desca-affajry-rais.pdf og-image.jpg
           if git diff --cached --quiet; then
             echo "Generated assets are unchanged."
             exit 0
