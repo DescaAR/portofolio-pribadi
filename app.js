@@ -119,29 +119,54 @@ function researchCard(r){
 function academicWorkCard(w){return '<article class="card book-card"><div class="book-cover"><small>INEQUALITY</small><strong>PROBLEM SOLVING<br>BOOK</strong><span>2026</span></div><div><div class="card-status-row"><div class="kicker">'+w.year+' · '+(lang==='en'?'Book & Intellectual Property':'Buku & Kekayaan Intelektual')+'</div><div style="display:flex;gap:7px;flex-wrap:wrap">'+statusBadge(w.status)+statusBadge(w.secondaryStatus)+'</div></div><h4>'+w.title+'</h4><p><strong>'+w.subtitle[lang]+'</strong></p><p style="margin-top:7px">'+w.authors+'</p><p style="margin-top:12px">'+w.description[lang]+'</p><div class="tags">'+w.tags.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div><div class="research-note">'+w.statusNote[lang]+'</div></div></article>'}
 function typesetMath(){if(window.MathJax&&window.MathJax.typesetPromise){window.MathJax.typesetPromise().catch(()=>{});}}
 let scrollSpyRaf=0;
+const BASE_PATH='/portofolio-pribadi/';
+const NAV_SECTION_IDS=['about','publications','projects','teaching','experience','achievements','skills','contact'];
+const CLEAN_ROUTE_IDS=['about','publications','book','projects','teaching','experience','achievements','skills','resources','contact'];
+function sectionPath(id){return id==='home'?BASE_PATH:BASE_PATH+id+'/'}
+function routeTargetFromPath(){
+  let path=location.pathname;
+  if(path===BASE_PATH.slice(0,-1))path=BASE_PATH;
+  if(path===BASE_PATH)return 'home';
+  if(!path.startsWith(BASE_PATH))return null;
+  const id=path.slice(BASE_PATH.length).split('/')[0];
+  return CLEAN_ROUTE_IDS.includes(id)?id:null;
+}
 function setActiveSection(id){
   document.querySelectorAll('#desktopNav a,#mobileMenu a').forEach(a=>{
-    const active=a.getAttribute('href')==='#'+id;
+    const active=a.dataset.section===id;
     a.classList.toggle('active',active);
     if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
   });
 }
+function scrollToSection(id,behavior='smooth'){
+  if(id==='home'){
+    window.scrollTo({top:0,behavior});
+    setActiveSection('home');
+    return;
+  }
+  const section=document.getElementById(id);
+  if(!section)return;
+  section.scrollIntoView({behavior,block:'start'});
+  setActiveSection(id);
+}
 function syncSectionFromScroll(){
   if(document.body.classList.contains('modal-open'))return;
-  const ids=[...document.querySelectorAll('#desktopNav a')]
-    .map(a=>(a.getAttribute('href')||'').replace('#',''))
-    .filter(Boolean);
-  const sections=ids.map(id=>document.getElementById(id)).filter(Boolean);
+  const sections=CLEAN_ROUTE_IDS.map(id=>document.getElementById(id)).filter(Boolean);
   if(!sections.length)return;
+  const navEl=document.querySelector('.nav');
+  const offset=(navEl?navEl.getBoundingClientRect().height:72)+42;
+  if(sections[0].getBoundingClientRect().top>offset){
+    if(location.pathname!==BASE_PATH||location.search||location.hash)history.replaceState(null,'',BASE_PATH);
+    setActiveSection('home');
+    return;
+  }
   const nearBottom=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-24;
   if(nearBottom){
     const id=sections[sections.length-1].id;
-    if(location.hash!=='#'+id)history.replaceState(null,'','#'+id);
+    if(location.pathname!==sectionPath(id)||location.search||location.hash)history.replaceState(null,'',sectionPath(id));
     setActiveSection(id);
     return;
   }
-  const navEl=document.querySelector('.nav');
-  const offset=(navEl?navEl.getBoundingClientRect().height:72)+42;
   let current=null;
   for(const section of sections){
     if(section.getBoundingClientRect().top<=offset)current=section;
@@ -149,7 +174,7 @@ function syncSectionFromScroll(){
   }
   if(!current)return;
   const id=current.id;
-  if(location.hash!=='#'+id)history.replaceState(null,'','#'+id);
+  if(location.pathname!==sectionPath(id)||location.search||location.hash)history.replaceState(null,'',sectionPath(id));
   setActiveSection(id);
 }
 function initScrollSpy(){
@@ -161,7 +186,7 @@ function handleScrollSpy(){
   if(scrollSpyRaf)return;
   scrollSpyRaf=requestAnimationFrame(()=>{scrollSpyRaf=0;syncSectionFromScroll()});
 }
-function nav(){const ids=['about','publications','projects','teaching','experience','achievements','skills','contact'],items=ui[lang].nav.map((x,i)=>'<a href="#'+ids[i]+'">'+x+'</a>').join('');$('#desktopNav').innerHTML=items;$('#mobileMenu').innerHTML=items}
+function nav(){const items=ui[lang].nav.map((x,i)=>{const id=NAV_SECTION_IDS[i];return '<a href="'+sectionPath(id)+'" data-section="'+id+'">'+x+'</a>'}).join('');$('#desktopNav').innerHTML=items;$('#mobileMenu').innerHTML=items}
 function bullets(arr){return '<ul class="detail-list">'+arr.map(x=>'<li>'+x+'</li>').join('')+'</ul>'}
 const roleTranslations={
 'University Mathematics Tutor':'Tutor Matematika Universitas','Mathematics Olympiad Coach':'Pembina Olimpiade Matematika','Teaching Assistant':'Asisten Pengajar','Mathematics Item Writer':'Penulis Soal Matematika','Data Analyst':'Analis Data','Project-Based Virtual Intern · Data Scientist':'Magang Virtual Berbasis Proyek · Data Scientist','Project-Based Virtual Intern · Big Data Analyst':'Magang Virtual Berbasis Proyek · Big Data Analyst','Chairman':'Ketua','Senior Staff, Education and Reasoning Department':'Staf Senior Bidang Pendidikan dan Penalaran','Junior Staff, Education and Reasoning Department':'Staf Muda Bidang Pendidikan dan Penalaran','Staff, Networking and Public Relations Department':'Staf Bidang Jejaring dan Hubungan Masyarakat','Board of Governor':'Board of Governor','Intermediate Moderator':'Moderator Menengah','Private Mentor':'Mentor Privat','Elementary Moderator':'Moderator Dasar','Apprentice Moderator':'Moderator Magang','General Secretary, Rembang Regional Board':'Sekretaris Umum, Pengurus Daerah Rembang','Head of Organizational Development, Rembang Regional Board':'Kepala Bidang Pengembangan Organisasi, Pengurus Daerah Rembang'};
@@ -288,7 +313,7 @@ function featuredDMath(){
 }
 function render(){nav();applyTheme();$('#langLabel').textContent=lang==='en'?'ID':'EN';$('#footerTagline').textContent=lang==='en'?'Mathematics · Research · Education':'Matematika · Riset · Pendidikan';document.documentElement.lang=lang;const u=ui[lang];
 $('#app').innerHTML=
-'<section class="hero anchor" id="home"><div class="container hero-grid"><div><div class="eyebrow">'+u.heroEyebrow+'</div><h1>Desca Affajry Rais</h1><h2>'+u.heroTitle+'</h2><p>'+u.heroText+'</p><div class="hero-actions"><a class="btn btn-primary" href="#publications">'+u.explore+' →</a><a class="btn btn-secondary" href="#projects">'+u.viewProjects+'</a><a class="btn btn-secondary" href="'+profile.linkedin+'" target="_blank" rel="noreferrer">LinkedIn</a><a class="btn btn-secondary" href="/portofolio-pribadi/cv.html">'+(lang==='en'?'View CV':'Lihat CV')+'</a></div><div class="hero-meta"><span><i class="dot"></i> Universitas Diponegoro · Mathematics</span><span><i class="dot"></i> GPA 3.92 / 4.00</span><span><i class="dot"></i> '+profile.location[lang]+'</span></div></div><div class="portrait"><img class="profile-photo" src="/portofolio-pribadi/profile-photo.webp?v=20261004-crisp-profile" alt="Desca Affajry Rais" decoding="async" fetchpriority="high"></div></div></section>'
+'<section class="hero anchor" id="home"><div class="container hero-grid"><div><div class="eyebrow">'+u.heroEyebrow+'</div><h1>Desca Affajry Rais</h1><h2>'+u.heroTitle+'</h2><p>'+u.heroText+'</p><div class="hero-actions"><a class="btn btn-primary" href="'+sectionPath('publications')+'" data-section="publications">'+u.explore+' →</a><a class="btn btn-secondary" href="'+sectionPath('projects')+'" data-section="projects">'+u.viewProjects+'</a><a class="btn btn-secondary" href="'+profile.linkedin+'" target="_blank" rel="noreferrer">LinkedIn</a><a class="btn btn-secondary" href="/portofolio-pribadi/cv.html">'+(lang==='en'?'View CV':'Lihat CV')+'</a></div><div class="hero-meta"><span><i class="dot"></i> Universitas Diponegoro · Mathematics</span><span><i class="dot"></i> GPA 3.92 / 4.00</span><span><i class="dot"></i> '+profile.location[lang]+'</span></div></div><div class="portrait"><img class="profile-photo" src="/portofolio-pribadi/profile-photo.webp?v=20261004-crisp-profile" alt="Desca Affajry Rais" decoding="async" fetchpriority="high"></div></div></section>'
 +'<section class="section anchor" id="about"><div class="container intro-grid"><div><div class="eyebrow">'+u.about+'</div><h3 class="section-title">'+u.aboutTitle+'</h3></div><div class="intro-copy">'+profile.summary[lang].map(p=>'<p>'+p+'</p>').join('')+'<div class="research-identity"><div class="research-identity-label">'+(lang==='en'?'Research Identity':'Identitas Riset')+'</div><div class="research-identity-topics"><span>'+(lang==='en'?'Graph Theory':'Teori Graf')+'</span><span>'+(lang==='en'?'Topology':'Topologi')+'</span><span>'+(lang==='en'?'Mathematical Analysis':'Analisis Matematika')+'</span><span>'+(lang==='en'?'Combinatorics':'Kombinatorika')+'</span></div></div><div class="stat-grid"><div class="stat"><strong>3.92</strong><span>'+(lang==='en'?'GPA / 4.00':'IPK / 4,00')+'</span></div><div class="stat"><strong>29</strong><span>'+(lang==='en'?'Achievements listed in the CV':'Prestasi yang tercantum di CV')+'</span></div><div class="stat"><strong>3</strong><span>'+(lang==='en'?'Publications & Manuscripts':'Publikasi & Manuskrip')+'</span></div><div class="stat"><strong>EPT 65</strong><span>'+(lang==='en'?'TOEFL Prediction Equivalent: 549':'Ekuivalensi Prediksi TOEFL: 549')+'</span></div></div></div></div><div class="container subsection"><h4>'+u.education+'</h4>'+education.map(e=>'<article class="edu-card"><time>'+periodLabel(e.period)+'</time><div><div class="item-topline"><h4>'+e.school+'</h4>'+statusBadge(periodStatus(e.period))+'</div><p><strong>'+e.degree[lang]+'</strong> · '+e.place+'</p>'+bullets(e.details[lang])+'</div></article>').join('')+'</div></section>'
 +'<section class="section anchor" id="publications"><div class="container"><div class="head"><div><div class="eyebrow">'+u.research+'</div><h3>'+u.research+'</h3></div><p>'+u.researchDesc+'</p></div><div class="research-grid">'+researchOutputs.map(researchCard).join('')+'</div></div></section>'
 +'<section class="section alt anchor" id="book"><div class="container"><div class="head"><div><div class="eyebrow">'+u.academicWorks+'</div><h3>'+u.academicWorks+'</h3></div><p>'+(lang==='en'?'A proof-oriented mathematics book currently prepared for planned Indonesian Intellectual Property (HKI) registration.':'Buku matematika berbasis pembuktian yang saat ini disiapkan untuk rencana pendaftaran Hak Kekayaan Intelektual (HKI).')+'</p></div>'+academicWorks.map(academicWorkCard).join('')+'</div></section>'
@@ -314,6 +339,19 @@ function scheduleReadingProgress(){
   progressFrame=requestAnimationFrame(()=>{progressFrame=0;updateReadingProgress()});
 }
 function bind(){
+  document.querySelectorAll('a[data-section]').forEach(a=>a.addEventListener('click',e=>{
+    if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    const id=a.dataset.section;
+    if(id!=='home'&&!CLEAN_ROUTE_IDS.includes(id))return;
+    if(id!=='home'&&!document.getElementById(id))return;
+    e.preventDefault();
+    const nextPath=sectionPath(id);
+    if(location.pathname!==nextPath||location.search||location.hash)history.pushState(null,'',nextPath);
+    const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    scrollToSection(id,reduce?'auto':'smooth');
+    $('#mobileMenu')?.classList.remove('open');
+    $('#mobileToggle')?.setAttribute('aria-expanded','false');
+  }));
   document.querySelectorAll('.project-card').forEach(el=>{
     const open=()=>openProject(el.dataset.project);
     el.addEventListener('click',open);
@@ -346,9 +384,9 @@ function bind(){
   updateReadingProgress();
 }
 let modalReturnFocus=null;
-function openProject(id){const p=projects.find(x=>x.id===id);if(!p)return;modalReturnFocus=document.activeElement;const u=ui[lang];$('#modalContent').innerHTML='<div class="card-status-row"><div class="kicker">'+projectCategoryLabel(p.category)+' · '+p.year+'</div>'+statusBadge(p.status||'completed')+'</div><h2 id="modalTitle">'+p.title+'</h2><p>'+p.summary[lang]+'</p><h3>'+u.projectProblem+'</h3><p>'+p.problem[lang]+'</p><h3>'+u.projectApproach+'</h3>'+bullets(p.approach[lang])+'<h3>'+u.projectResults+'</h3><div class="result-grid">'+p.results.map(r=>'<div class="result-box"><strong>'+r[0]+'</strong><span>'+r[1][lang]+'</span></div>').join('')+'</div><h3>'+u.projectTools+'</h3><div class="tags">'+p.tools.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div>'+(p.note?'<h3>'+u.projectNote+'</h3><div class="note">'+p.note[lang]+'</div>':'')+'<div class="link-row">'+(p.site?'<a class="btn btn-primary" href="'+p.site+'" target="_blank" rel="noreferrer">'+u.visitSite+' ↗</a>':'')+(p.github?'<a class="btn btn-primary" href="'+p.github+'" target="_blank" rel="noreferrer">'+u.visitRepo+' ↗</a>':'')+(p.conference?'<a class="btn btn-secondary" href="'+p.conference+'" target="_blank" rel="noreferrer">'+u.visitConference+' ↗</a>':'')+'</div>';$('#modalBackdrop').classList.add('open');$('#modalBackdrop').setAttribute('aria-hidden','false');document.body.classList.add('modal-open');history.replaceState(null,'','#project-'+id);typesetMath();requestAnimationFrame(()=>$('#modalClose')?.focus())}
-function closeModal(){const wasOpen=$('#modalBackdrop').classList.contains('open');$('#modalBackdrop').classList.remove('open');$('#modalBackdrop').setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');if(location.hash.startsWith('#project-'))history.replaceState(null,'','#projects');if(wasOpen&&modalReturnFocus&&document.contains(modalReturnFocus))requestAnimationFrame(()=>modalReturnFocus.focus())}
-$('#themeToggle').addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem('portfolio-theme',theme);applyTheme()});$('#langToggle').addEventListener('click',()=>{lang=lang==='en'?'id':'en';localStorage.setItem('portfolio-lang',lang);render()});$('#mobileToggle').addEventListener('click',()=>{const open=$('#mobileMenu').classList.toggle('open');$('#mobileToggle').setAttribute('aria-expanded',String(open))});$('#modalClose').addEventListener('click',closeModal);$('#modalBackdrop').addEventListener('click',e=>{if(e.target===$('#modalBackdrop'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();$('#mobileMenu')?.classList.remove('open');$('#mobileToggle')?.setAttribute('aria-expanded','false')}});document.getElementById('year').textContent=new Date().getFullYear();render();if(location.hash.startsWith('#project-'))setTimeout(()=>openProject(location.hash.replace('#project-','')),50);
+function openProject(id){const p=projects.find(x=>x.id===id);if(!p)return;modalReturnFocus=document.activeElement;const u=ui[lang];$('#modalContent').innerHTML='<div class="card-status-row"><div class="kicker">'+projectCategoryLabel(p.category)+' · '+p.year+'</div>'+statusBadge(p.status||'completed')+'</div><h2 id="modalTitle">'+p.title+'</h2><p>'+p.summary[lang]+'</p><h3>'+u.projectProblem+'</h3><p>'+p.problem[lang]+'</p><h3>'+u.projectApproach+'</h3>'+bullets(p.approach[lang])+'<h3>'+u.projectResults+'</h3><div class="result-grid">'+p.results.map(r=>'<div class="result-box"><strong>'+r[0]+'</strong><span>'+r[1][lang]+'</span></div>').join('')+'</div><h3>'+u.projectTools+'</h3><div class="tags">'+p.tools.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div>'+(p.note?'<h3>'+u.projectNote+'</h3><div class="note">'+p.note[lang]+'</div>':'')+'<div class="link-row">'+(p.site?'<a class="btn btn-primary" href="'+p.site+'" target="_blank" rel="noreferrer">'+u.visitSite+' ↗</a>':'')+(p.github?'<a class="btn btn-primary" href="'+p.github+'" target="_blank" rel="noreferrer">'+u.visitRepo+' ↗</a>':'')+(p.conference?'<a class="btn btn-secondary" href="'+p.conference+'" target="_blank" rel="noreferrer">'+u.visitConference+' ↗</a>':'')+'</div>';$('#modalBackdrop').classList.add('open');$('#modalBackdrop').setAttribute('aria-hidden','false');document.body.classList.add('modal-open');history.replaceState(null,'',sectionPath('projects')+'?project='+encodeURIComponent(id));typesetMath();requestAnimationFrame(()=>$('#modalClose')?.focus())}
+function closeModal(){const wasOpen=$('#modalBackdrop').classList.contains('open');$('#modalBackdrop').classList.remove('open');$('#modalBackdrop').setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');if(new URLSearchParams(location.search).has('project'))history.replaceState(null,'',sectionPath('projects'));if(wasOpen&&modalReturnFocus&&document.contains(modalReturnFocus))requestAnimationFrame(()=>modalReturnFocus.focus())}
+$('#themeToggle').addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem('portfolio-theme',theme);applyTheme()});$('#langToggle').addEventListener('click',()=>{lang=lang==='en'?'id':'en';localStorage.setItem('portfolio-lang',lang);render()});$('#mobileToggle').addEventListener('click',()=>{const open=$('#mobileMenu').classList.toggle('open');$('#mobileToggle').setAttribute('aria-expanded',String(open))});$('#modalClose').addEventListener('click',closeModal);$('#modalBackdrop').addEventListener('click',e=>{if(e.target===$('#modalBackdrop'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();$('#mobileMenu')?.classList.remove('open');$('#mobileToggle')?.setAttribute('aria-expanded','false')}});document.getElementById('year').textContent=new Date().getFullYear();const initialRouteTarget=routeTargetFromPath();const initialProjectId=new URLSearchParams(location.search).get('project');render();requestAnimationFrame(()=>{if(initialRouteTarget){const cleanUrl=sectionPath(initialRouteTarget)+(initialProjectId?'?project='+encodeURIComponent(initialProjectId):'');history.replaceState(null,'',cleanUrl);scrollToSection(initialRouteTarget,'auto')}});if(initialProjectId)setTimeout(()=>openProject(initialProjectId),50);window.addEventListener('popstate',()=>{const target=routeTargetFromPath();if(target)scrollToSection(target,'auto')});
 window.addEventListener('scroll',scheduleReadingProgress,{passive:true});
 window.addEventListener('resize',scheduleReadingProgress);
 window.addEventListener('load',()=>{typesetMath();updateReadingProgress()});
