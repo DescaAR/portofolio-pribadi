@@ -69,8 +69,8 @@ jobs:
           });
           await browser.close();
           EOF
-          rm -f generate-cv.mjs
           node generate-cv.mjs
+          rm -f generate-cv.mjs
 
       - name: Generate social preview image
         run: |
