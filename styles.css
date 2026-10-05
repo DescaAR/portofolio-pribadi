@@ -3712,3 +3712,280 @@ button.quick-action{
   .footer-meta{align-items:flex-start}
   .copy-feedback{position:static;margin-top:8px}
 }
+
+
+/* === Final Education redesign === */
+#about .education-section{
+  margin-top:64px;
+}
+#about .education-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:24px;
+  margin-bottom:22px;
+}
+#about .education-heading>div>span{
+  display:block;
+  margin-bottom:5px;
+  color:var(--blue);
+  font-size:.68rem;
+  font-weight:850;
+  letter-spacing:.12em;
+}
+#about .education-heading h4{
+  margin:0;
+  color:var(--deep);
+  font-size:1.55rem;
+  letter-spacing:-.03em;
+}
+#about .education-heading p{
+  max-width:520px;
+  margin:0;
+  color:var(--muted);
+  font-size:.9rem;
+  text-align:right;
+}
+#about .education-list{
+  display:grid;
+  gap:16px;
+}
+#about .education-list .edu-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:24px;
+  padding:0!important;
+  overflow:hidden;
+  border:1px solid rgba(54,105,165,.13)!important;
+  border-radius:20px!important;
+  background:
+    radial-gradient(circle at 92% 8%,rgba(88,171,246,.10),transparent 13rem),
+    linear-gradient(145deg,#ffffff,#f6faff)!important;
+  box-shadow:0 12px 34px rgba(6,27,62,.045)!important;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+#about .education-list .edu-card:hover{
+  transform:translateY(-2px)!important;
+  border-color:rgba(21,101,216,.24)!important;
+  box-shadow:0 18px 42px rgba(6,27,62,.075)!important;
+}
+#about .education-list .edu-card::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:4px;
+  background:linear-gradient(180deg,#1d6fe8,#62b8fa);
+}
+#about .education-list .edu-card.edu-past::before{
+  background:linear-gradient(180deg,#7392b8,#a8bfd9);
+}
+#about .edu-card-side{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:flex-start;
+  min-height:100%;
+  padding:24px 0 24px 26px;
+}
+#about .edu-school-mark{
+  display:grid;
+  place-items:center;
+  min-width:74px;
+  min-height:58px;
+  padding:10px 12px;
+  border:1px solid rgba(42,103,182,.12);
+  border-radius:15px;
+  background:#edf5ff;
+  color:#0b3d7d;
+  font-size:.82rem;
+  font-weight:900;
+  letter-spacing:.04em;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+}
+#about .edu-card.edu-past .edu-school-mark{
+  background:#f1f5f9;
+  color:#526b8a;
+}
+#about .education-list .edu-card time{
+  display:block;
+  margin-top:24px;
+  color:#73849a!important;
+  font-size:.78rem!important;
+  font-weight:700;
+  line-height:1.45;
+}
+#about .edu-card-main{
+  padding:24px 26px 24px 0;
+}
+#about .edu-card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+}
+#about .edu-card-header>div{
+  min-width:0;
+}
+#about .edu-level{
+  display:block;
+  margin-bottom:4px;
+  color:var(--blue);
+  font-size:.66rem;
+  font-weight:850;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+#about .education-list .edu-card h4{
+  margin:0!important;
+  color:var(--deep)!important;
+  font-size:1.22rem!important;
+  line-height:1.25;
+  letter-spacing:-.025em;
+}
+#about .education-list .edu-card .status{
+  flex:0 0 auto;
+  margin-top:0!important;
+}
+#about .edu-degree-line{
+  display:flex;
+  gap:8px 14px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:10px;
+}
+#about .edu-degree-line strong{
+  color:#314c72;
+  font-size:.93rem;
+}
+#about .edu-degree-line span{
+  color:var(--muted);
+  font-size:.84rem;
+}
+#about .edu-detail-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px 12px;
+  margin-top:18px;
+}
+#about .edu-detail-item{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:9px;
+  align-items:flex-start;
+  min-width:0;
+  padding:10px 11px;
+  border:1px solid rgba(75,115,166,.09);
+  border-radius:11px;
+  background:rgba(247,250,254,.8);
+}
+#about .edu-detail-index{
+  color:#78a2d4;
+  font-size:.65rem;
+  font-weight:900;
+  letter-spacing:.05em;
+}
+#about .edu-detail-item p{
+  margin:0!important;
+  color:#607289!important;
+  font-size:.79rem!important;
+  line-height:1.45;
+}
+[data-theme="dark"] #about .education-heading h4{
+  color:#f2f7fd!important;
+}
+[data-theme="dark"] #about .education-heading p{
+  color:#aabbd0!important;
+}
+[data-theme="dark"] #about .education-list .edu-card{
+  background:
+    radial-gradient(circle at 92% 8%,rgba(77,157,243,.08),transparent 13rem),
+    linear-gradient(145deg,#102238,#0c1a2d)!important;
+  border:1px solid rgba(137,174,217,.14)!important;
+  border-bottom:1px solid rgba(137,174,217,.14)!important;
+  border-radius:20px!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.14)!important;
+  padding:0!important;
+}
+[data-theme="dark"] #about .education-list .edu-card:hover{
+  background:
+    radial-gradient(circle at 92% 8%,rgba(77,157,243,.11),transparent 13rem),
+    linear-gradient(145deg,#122640,#0d1d32)!important;
+  transform:translateY(-2px)!important;
+  box-shadow:0 18px 42px rgba(0,0,0,.22)!important;
+}
+[data-theme="dark"] #about .edu-school-mark{
+  background:#132d4b;
+  border-color:rgba(120,175,235,.14);
+  color:#b9dcff;
+  box-shadow:none;
+}
+[data-theme="dark"] #about .edu-card.edu-past .edu-school-mark{
+  background:#17283c;
+  color:#a9bfd8;
+}
+[data-theme="dark"] #about .education-list .edu-card time{
+  color:#91a6be!important;
+}
+[data-theme="dark"] #about .edu-level{
+  color:#75b8ff;
+}
+[data-theme="dark"] #about .education-list .edu-card h4{
+  color:#f2f7fd!important;
+}
+[data-theme="dark"] #about .edu-degree-line strong{
+  color:#d9e8f8;
+}
+[data-theme="dark"] #about .edu-degree-line span{
+  color:#9fb2c8;
+}
+[data-theme="dark"] #about .edu-detail-item{
+  background:rgba(15,34,57,.72);
+  border-color:rgba(137,174,217,.09);
+}
+[data-theme="dark"] #about .edu-detail-item p{
+  color:#b5c4d7!important;
+}
+[data-theme="dark"] #about .edu-detail-index{
+  color:#6eaef1;
+}
+@media(max-width:800px){
+  #about .education-heading{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  #about .education-heading p{
+    text-align:left;
+  }
+  #about .education-list .edu-card{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  #about .edu-card-side{
+    flex-direction:row;
+    align-items:center;
+    gap:12px;
+    padding:20px 22px 0 24px;
+  }
+  #about .education-list .edu-card time{
+    margin-top:0;
+    margin-left:auto;
+    text-align:right;
+  }
+  #about .edu-card-main{
+    padding:18px 22px 22px 24px;
+  }
+}
+@media(max-width:560px){
+  #about .edu-detail-grid{
+    grid-template-columns:1fr;
+  }
+  #about .edu-card-header{
+    gap:10px;
+  }
+  #about .edu-school-mark{
+    min-width:64px;
+    min-height:50px;
+    font-size:.73rem;
+  }
+}
