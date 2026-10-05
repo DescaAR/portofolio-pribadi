@@ -327,9 +327,14 @@ function educationMark(e){
 }
 function educationCard(e,index){
   const level=index===0?(lang==='en'?'Higher Education':'Pendidikan Tinggi'):(lang==='en'?'Secondary Education':'Pendidikan Menengah');
+  const metricRaw=e.details[lang][0]||'';
+  const metricParts=metricRaw.split(':');
+  const metricLabel=metricParts.shift()||'';
+  const metricValue=metricParts.join(':').trim();
+  const details=e.details[lang].slice(1);
   return '<article class="education-modern-card '+(index===0?'education-current':'education-past')+'">'
     +'<div class="education-modern-top"><div class="education-mark">'+educationMark(e)+'</div><div class="education-modern-meta"><time>'+periodLabel(e.period)+'</time><span>'+e.place+'</span></div>'+statusBadge(periodStatus(e.period))+'</div>'
-    +'<div class="education-modern-main"><div class="education-level">'+level+'</div><h4>'+e.school+'</h4><div class="education-degree">'+e.degree[lang]+'</div><div class="education-detail-list">'+e.details[lang].map(d=>'<div class="education-detail-row"><i></i><span>'+d+'</span></div>').join('')+'</div></div>'
+    +'<div class="education-modern-main"><div class="education-title-row"><div><div class="education-level">'+level+'</div><h4>'+e.school+'</h4><div class="education-degree">'+e.degree[lang]+'</div></div><div class="education-metric"><span>'+metricLabel+'</span><strong>'+metricValue+'</strong></div></div><div class="education-detail-list">'+details.map(d=>'<div class="education-detail-row"><i></i><span>'+d+'</span></div>').join('')+'</div></div>'
     +'</article>';
 }
 function awardHTML(a){const [cls,svg]=iconType(a.type);return '<article class="award-card" data-year="'+a.year+'"><div class="award-icon '+cls+'">'+svg+'</div><div><h4>'+competitionTitle(a)+'</h4><p>'+a.org+' · '+periodLabel(a.date)+'</p><span class="award-type">'+awardLabel(a)+'</span></div></article>'}
