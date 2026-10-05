@@ -4557,3 +4557,31 @@ html:not([data-theme="dark"]) .note{
     text-align:left;
   }
 }
+
+
+/* === Project-specific previews + final dark-mode audit v4 === */
+.project-preview{--pv1:#2467d6;--pv2:#59bfff}
+.project-preview-signal{display:flex;align-items:center;gap:10px;margin:2px 0 5px}
+.project-preview-signal span{color:#2d5f96;font-size:.6rem;font-weight:900;letter-spacing:.12em}
+.project-preview-signal em{position:relative;flex:1;height:1px;background:linear-gradient(90deg,color-mix(in srgb,var(--pv1) 55%,transparent),transparent)}
+.project-preview-signal em::after{content:"";position:absolute;right:16%;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--pv2);box-shadow:0 0 0 5px color-mix(in srgb,var(--pv2) 13%,transparent)}
+.project-preview-plot b{background:linear-gradient(180deg,var(--pv2),var(--pv1))}
+.project-preview-dufan-routing{--pv1:#286fd3;--pv2:#78c9ff}.project-preview-dufan-routing .project-preview-plot b:nth-child(1){height:82%}.project-preview-dufan-routing .project-preview-plot b:nth-child(2){height:64%}.project-preview-dufan-routing .project-preview-plot b:nth-child(3){height:48%}.project-preview-dufan-routing .project-preview-plot b:nth-child(4){height:70%}.project-preview-dufan-routing .project-preview-plot b:nth-child(5){height:42%}.project-preview-dufan-routing .project-preview-plot b:nth-child(6){height:31%}
+.project-preview-bike-sharing{--pv1:#147ab8;--pv2:#66d0f2}.project-preview-bike-sharing .project-preview-plot b:nth-child(1){height:36%}.project-preview-bike-sharing .project-preview-plot b:nth-child(2){height:88%}.project-preview-bike-sharing .project-preview-plot b:nth-child(3){height:44%}.project-preview-bike-sharing .project-preview-plot b:nth-child(4){height:39%}.project-preview-bike-sharing .project-preview-plot b:nth-child(5){height:94%}.project-preview-bike-sharing .project-preview-plot b:nth-child(6){height:56%}
+.project-preview-financial-anomaly{--pv1:#6259c9;--pv2:#9d96ff}.project-preview-financial-anomaly .project-preview-plot b:nth-child(1){height:25%}.project-preview-financial-anomaly .project-preview-plot b:nth-child(2){height:31%}.project-preview-financial-anomaly .project-preview-plot b:nth-child(3){height:89%}.project-preview-financial-anomaly .project-preview-plot b:nth-child(4){height:28%}.project-preview-financial-anomaly .project-preview-plot b:nth-child(5){height:36%}.project-preview-financial-anomaly .project-preview-plot b:nth-child(6){height:96%}
+.project-preview-credit-risk{--pv1:#24755f;--pv2:#62c9a7}.project-preview-credit-risk .project-preview-plot b:nth-child(1){height:91%}.project-preview-credit-risk .project-preview-plot b:nth-child(2){height:86%}.project-preview-credit-risk .project-preview-plot b:nth-child(3){height:93%}.project-preview-credit-risk .project-preview-plot b:nth-child(4){height:68%}.project-preview-credit-risk .project-preview-plot b:nth-child(5){height:79%}.project-preview-credit-risk .project-preview-plot b:nth-child(6){height:88%}
+.project-preview-kimia-farma{--pv1:#127b89;--pv2:#62d4df}.project-preview-kimia-farma .project-preview-plot b:nth-child(1){height:49%}.project-preview-kimia-farma .project-preview-plot b:nth-child(2){height:63%}.project-preview-kimia-farma .project-preview-plot b:nth-child(3){height:77%}.project-preview-kimia-farma .project-preview-plot b:nth-child(4){height:68%}.project-preview-kimia-farma .project-preview-plot b:nth-child(5){height:86%}.project-preview-kimia-farma .project-preview-plot b:nth-child(6){height:96%}
+.project-preview-portfolio-optimization{--pv1:#9a6b22;--pv2:#e6b85f}.project-preview-portfolio-optimization .project-preview-plot b:nth-child(1){height:24%}.project-preview-portfolio-optimization .project-preview-plot b:nth-child(2){height:35%}.project-preview-portfolio-optimization .project-preview-plot b:nth-child(3){height:48%}.project-preview-portfolio-optimization .project-preview-plot b:nth-child(4){height:64%}.project-preview-portfolio-optimization .project-preview-plot b:nth-child(5){height:81%}.project-preview-portfolio-optimization .project-preview-plot b:nth-child(6){height:94%}
+[data-theme="dark"] #about .education-modern-card,[data-theme="dark"] #experience .experience-modern-card{background:linear-gradient(145deg,rgba(18,36,59,.52),rgba(12,27,46,.42))!important;border-color:rgba(137,174,217,.11)!important;box-shadow:none!important}
+[data-theme="dark"] #about .education-modern-card:hover,[data-theme="dark"] #experience .experience-modern-card:hover{border-color:rgba(111,170,237,.20)!important;box-shadow:0 12px 30px rgba(0,0,0,.12)!important}
+[data-theme="dark"] #book .book-card{background:radial-gradient(circle at 92% 10%,rgba(81,158,242,.055),transparent 18rem),rgba(14,30,50,.72)!important;box-shadow:none!important}
+[data-theme="dark"] #teaching .teaching-card{background:rgba(14,31,52,.58)!important;box-shadow:none!important}
+[data-theme="dark"] #projects .project-card{background:rgba(13,29,49,.66)!important;box-shadow:none!important}
+[data-theme="dark"] #projects .project-card:hover{box-shadow:0 18px 42px rgba(0,0,0,.16)!important}
+[data-theme="dark"] #resources .academic-doc-item,[data-theme="dark"] #resources .quick-academic-panel{background:rgba(14,31,52,.58)!important;border-color:rgba(135,171,213,.11)!important;box-shadow:none!important}
+[data-theme="dark"] #resources .quick-action{background:#102640;border-color:rgba(135,171,213,.12);color:#d9e9fa}
+[data-theme="dark"] #resources .quick-action small{color:#91a8bf}
+[data-theme="dark"] #achievements .award-card{border-color:rgba(135,171,213,.10)!important}
+[data-theme="dark"] .project-preview-signal span{color:#96b9dc}
+[data-theme="dark"] #contact .contact-shell{border:1px solid rgba(117,177,239,.13)}
+.profile-link-pending{cursor:default}.profile-link-pending .profile-state{max-width:168px;text-align:center}
