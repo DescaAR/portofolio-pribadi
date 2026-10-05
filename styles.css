@@ -4359,3 +4359,23 @@ button.quick-action{
     justify-self:start;
   }
 }
+
+
+/* Academic resources now live inside About */
+#about .about-academic-resources{
+  margin-top:64px;
+}
+#about .about-academic-resources .resource-grid{
+  margin-top:0;
+}
+#about .about-academic-resources .academic-profile-section{
+  margin-top:44px;
+}
+#about .about-academic-resources>.subsection:last-child{
+  margin-top:36px;
+}
+@media(max-width:650px){
+  #about .about-academic-resources{
+    margin-top:48px;
+  }
+}
