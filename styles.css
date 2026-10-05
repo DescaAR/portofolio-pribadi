@@ -4457,3 +4457,20 @@ button.quick-action{
     white-space:normal;
   }
 }
+
+
+/* Global justified body copy */
+body p,
+body li,
+.research-abstract p,
+.education-detail-row span,
+.experience-modern-main .detail-list li,
+.academic-doc-item small,
+.profile-link-card > span,
+.quick-academic-copy p,
+.resource-panel p,
+.contact-intro p,
+.note{
+  text-align:justify;
+  text-justify:inter-word;
+}
