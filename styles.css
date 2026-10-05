@@ -4474,3 +4474,33 @@ body li,
   text-align:justify;
   text-justify:inter-word;
 }
+
+
+/* Match portfolio body-copy tone to publication pages */
+html:not([data-theme="dark"]) body p,
+html:not([data-theme="dark"]) body li,
+html:not([data-theme="dark"]) .research-abstract p,
+html:not([data-theme="dark"]) .education-detail-row span,
+html:not([data-theme="dark"]) .experience-modern-main .detail-list,
+html:not([data-theme="dark"]) .experience-modern-main .detail-list li,
+html:not([data-theme="dark"]) .academic-doc-item small,
+html:not([data-theme="dark"]) .profile-link-card > span,
+html:not([data-theme="dark"]) .quick-academic-copy p,
+html:not([data-theme="dark"]) .resource-panel p,
+html:not([data-theme="dark"]) .contact-intro p,
+html:not([data-theme="dark"]) .head p,
+html:not([data-theme="dark"]) .intro-copy p,
+html:not([data-theme="dark"]) .card p,
+html:not([data-theme="dark"]) .note{
+  color:#596b82;
+}
+
+[data-theme="dark"] body p,
+[data-theme="dark"] body li,
+[data-theme="dark"] .education-detail-row span,
+[data-theme="dark"] .experience-modern-main .detail-list,
+[data-theme="dark"] .experience-modern-main .detail-list li,
+[data-theme="dark"] .resource-panel p,
+[data-theme="dark"] .contact-intro p{
+  color:#b5c4d6;
+}
