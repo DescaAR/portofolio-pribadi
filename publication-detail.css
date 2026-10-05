@@ -31,3 +31,20 @@ body{background:#eef4fa;color:#1e2f49;letter-spacing:-.003em}
   text-align:justify;
   text-justify:inter-word;
 }
+
+
+/* === Unified with portfolio homepage v4 === */
+:where(a,button):focus-visible{outline:3px solid #58a6ff;outline-offset:3px}
+.top .btn{min-height:44px}
+.hero{position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;width:360px;height:360px;right:-150px;top:-120px;border-radius:50%;border:1px solid rgba(36,103,214,.08);box-shadow:0 0 0 52px rgba(36,103,214,.018),0 0 0 104px rgba(36,103,214,.010);pointer-events:none}
+.wrap{position:relative;z-index:1}
+.publication-reveal{opacity:0;transform:translateY(12px);transition:opacity .5s cubic-bezier(.22,.61,.36,1),transform .5s cubic-bezier(.22,.61,.36,1)}
+.publication-reveal.is-visible{opacity:1;transform:none}
+[data-theme="dark"] .hero::after{border-color:rgba(112,174,240,.10);box-shadow:0 0 0 52px rgba(89,160,239,.018),0 0 0 104px rgba(89,160,239,.010)}
+[data-theme="dark"] .result,[data-theme="dark"] .meta div{background:rgba(14,31,52,.58);box-shadow:none}
+[data-theme="dark"] .citation,[data-theme="dark"] .note{background:rgba(16,36,61,.72)}
+[data-theme="dark"] .status.draft{background:#3a2b12;color:#ffd38a}
+[data-theme="dark"] .status.presented{background:#10352d;color:#79e2ba}
+@media(max-width:430px){.wrap{width:min(100% - 28px,1040px)}.topin{width:min(100% - 24px,1040px)}.actions{gap:6px}.actions .btn{min-height:42px;padding:8px 9px;font-size:.78rem}.hero h1{font-size:clamp(1.9rem,10.5vw,2.8rem)}.authors{font-size:.92rem;line-height:1.55}.section{margin-top:38px}.section h2{font-size:1.22rem}.result,.citation,.note{padding:15px}}
+@media(prefers-reduced-motion:reduce){.publication-reveal{opacity:1!important;transform:none!important;transition:none!important}}
