@@ -116,7 +116,7 @@ function researchCard(r){
     : '<span class="btn btn-secondary btn-disabled" aria-disabled="true" title="'+(lang==='en'?'Publication page not available yet':'Halaman publikasi belum tersedia')+'">'+ui[lang].publicationPage+'</span>';
   return '<article class="card research-card"><div class="card-status-row"><div class="kicker">'+(lang==='en'?'ACADEMIC OUTPUT':'KARYA AKADEMIK')+' · '+r.year+' · '+r.venue+'</div>'+statusBadge(r.status)+'</div><h4>'+r.title+'</h4><p class="research-authors"><strong>'+r.authors+'</strong></p><div class="research-summary"><p>'+r.summary[lang]+'</p></div><div class="research-keywords"><span class="research-label">'+(lang==='en'?'Keywords':'Kata Kunci')+'</span><div class="tags">'+r.keywords.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div></div><div class="pub-meta"><div><strong>'+ui[lang].doi+'</strong><span>'+(r.doi?'<a href="https://doi.org/'+r.doi+'" target="_blank" rel="noreferrer">'+r.doi+'</a>':ui[lang].pending)+'</span></div></div><div class="link-row"><a class="btn btn-primary" href="/portofolio-pribadi/publications/'+r.slug+'">'+ui[lang].viewPublication+' →</a>'+publicationPageButton+(r.conference?'<a class="btn btn-secondary" href="'+r.conference+'" target="_blank" rel="noreferrer">'+ui[lang].conferencePage+' ↗</a>':'')+'</div>'+(r.note?'<div class="research-note">'+r.note[lang]+'</div>':'')+'</article>';
 }
-function academicWorkCard(w){return '<article class="card book-card"><div class="book-cover"><small>INEQUALITY</small><strong>PROBLEM SOLVING<br>BOOK</strong><span>2026</span></div><div><div class="card-status-row"><div class="kicker">'+w.year+' · '+(lang==='en'?'Book & Intellectual Property':'Buku & Kekayaan Intelektual')+'</div><div style="display:flex;gap:7px;flex-wrap:wrap">'+statusBadge(w.status)+statusBadge(w.secondaryStatus)+'</div></div><h4>'+w.title+'</h4><p><strong>'+w.subtitle[lang]+'</strong></p><p style="margin-top:7px">'+w.authors+'</p><p style="margin-top:12px">'+w.description[lang]+'</p><div class="tags">'+w.tags.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div><div class="research-note">'+w.statusNote[lang]+'</div></div></article>'}
+function academicWorkCard(w){return '<article class="card book-card"><div class="book-cover"><small>INEQUALITY</small><strong>PROBLEM SOLVING<br>BOOK</strong><span>2026</span></div><div><div class="card-status-row"><div class="kicker">'+w.year+' · '+(lang==='en'?'Book & Intellectual Property':'Buku & Kekayaan Intelektual')+'</div><div style="display:flex;gap:7px;flex-wrap:wrap">'+statusBadge(w.status)+statusBadge(w.secondaryStatus)+'</div></div><h4>'+w.title+'</h4><p><strong>'+w.subtitle[lang]+'</strong></p><p style="margin-top:7px">'+w.authors+'</p><p style="margin-top:12px">'+w.description[lang]+'</p><div class="tags">'+w.tags.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div></div></article>'}
 function typesetMath(){if(window.MathJax&&window.MathJax.typesetPromise){window.MathJax.typesetPromise().catch(()=>{});}}
 let scrollSpyRaf=0;
 const BASE_PATH='/portofolio-pribadi/';
@@ -358,13 +358,9 @@ function updateFooterMeta(){
   const footerEnd=document.querySelector('.footer-in>div:last-child');
   if(!footerEnd)return;
   footerEnd.classList.add('footer-meta');
-  let updated=document.getElementById('lastUpdated');
-  if(!updated){
-    updated=document.createElement('span');
-    updated.id='lastUpdated';
-    footerEnd.appendChild(updated);
-  }
-  updated.textContent=lang==='en'?'Last updated · October 5, 2026':'Terakhir diperbarui · 5 Oktober 2026';
+  const year=new Date().getFullYear();
+  const updated=lang==='en'?'Last updated · October 5, 2026':'Terakhir diperbarui · 5 Oktober 2026';
+  footerEnd.innerHTML='<span class="footer-copyright">© '+year+' Desca Affajry Rais.</span><span id="lastUpdated">'+updated+'</span>';
 }
 async function copyAcademicText(value,button){
   let ok=false;
