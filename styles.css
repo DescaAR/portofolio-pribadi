@@ -4504,3 +4504,56 @@ html:not([data-theme="dark"]) .note{
 [data-theme="dark"] .contact-intro p{
   color:#b5c4d6;
 }
+
+
+/* Education GPA / final grade metric */
+#about .education-title-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  align-items:start;
+}
+#about .education-metric{
+  min-width:128px;
+  padding:10px 12px;
+  border:1px solid rgba(42,103,182,.12);
+  border-radius:12px;
+  background:#eef5fd;
+  text-align:right;
+}
+#about .education-metric span{
+  display:block;
+  color:#6f84a0;
+  font-size:.64rem;
+  font-weight:850;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+#about .education-metric strong{
+  display:block;
+  margin-top:2px;
+  color:#173f73;
+  font-size:.88rem;
+  line-height:1.25;
+  white-space:nowrap;
+}
+[data-theme="dark"] #about .education-metric{
+  background:#132a45;
+  border-color:rgba(120,175,235,.14);
+}
+[data-theme="dark"] #about .education-metric span{
+  color:#8ea7c2;
+}
+[data-theme="dark"] #about .education-metric strong{
+  color:#e4f1ff;
+}
+@media(max-width:560px){
+  #about .education-title-row{
+    grid-template-columns:1fr;
+  }
+  #about .education-metric{
+    min-width:0;
+    width:max-content;
+    text-align:left;
+  }
+}
