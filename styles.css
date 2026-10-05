@@ -2578,18 +2578,18 @@ body{
   background:rgba(94,163,255,.08);
 }
 
-/* Subtle reveal motion */
+/* Unified replayable reveal motion */
 .reveal-item{
   opacity:0;
-  transform:translateY(14px);
+  translate:0 12px;
   transition:
-    opacity .52s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms),
-    transform .52s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms);
-  will-change:opacity,transform;
+    opacity .58s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms),
+    translate .62s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms);
+  will-change:opacity,translate;
 }
 .reveal-item.is-visible{
   opacity:1;
-  transform:none;
+  translate:0 0;
 }
 
 /* Contrast and tap targets */
@@ -2647,7 +2647,7 @@ body{
   }
   .reveal-item{
     opacity:1!important;
-    transform:none!important;
+    translate:none!important;
   }
 }
 
