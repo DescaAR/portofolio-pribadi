@@ -233,12 +233,34 @@ function experienceTabs(){
   ];
   return '<div class="experience-tabs" role="tablist" aria-label="'+(lang==='en'?'Experience categories':'Kategori pengalaman')+'">'+tabs.map(([id,label])=>'<button class="experience-tab '+(experienceTab===id?'active':'')+'" type="button" role="tab" aria-selected="'+(experienceTab===id?'true':'false')+'" aria-controls="experience-panel" tabindex="'+(experienceTab===id?'0':'-1')+'" data-exp-tab="'+id+'">'+label+'</button>').join('')+'</div>';
 }
+function experienceMark(item){
+  const name=organizationLabel(item.org||'');
+  if(/KOMIPA/i.test(name))return 'KOMIPA';
+  if(/Tutorkuliah/i.test(name))return 'TUTOR';
+  if(/SainsIn/i.test(name))return 'SAINS';
+  if(/Emergencyy/i.test(name))return 'DATA';
+  if(/Mathematics Student Association|Himpunan Mahasiswa Matematika/i.test(name))return 'HMM';
+  if(/Applied Mathematics Association|Asosiasi Matematika Terapan/i.test(name))return 'AMT';
+  const initials=name.split(/\s+/).filter(w=>w&&![ 'of','and','the','dan','di'].includes(w.toLowerCase())).slice(0,3).map(w=>w[0]).join('').toUpperCase();
+  return initials||'EXP';
+}
+function modernExperienceCards(items,kind){
+  const label=kind==='leadership'
+    ?(lang==='en'?'Leadership & Organization':'Kepemimpinan & Organisasi')
+    :(lang==='en'?'Professional Experience':'Pengalaman Profesional');
+  return '<div class="experience-modern-wrap"><div class="experience-modern-label">'+label+'</div><div class="experience-modern-grid">'
+    +items.map((x,i)=>'<article class="experience-modern-card '+(kind==='leadership'?'leadership-card':'professional-card')+'">'
+      +'<div class="experience-modern-top"><div class="experience-mark">'+experienceMark(x)+'</div><div class="experience-modern-meta"><time>'+periodLabel(x.period)+'</time><span>'+(x.place||'')+'</span></div>'+statusBadge(x.status||periodStatus(x.period))+'</div>'
+      +'<div class="experience-modern-main"><div class="experience-order">'+String(i+1).padStart(2,'0')+'</div><h4>'+roleLabel(x.role)+'</h4><div class="experience-org">'+organizationLabel(x.org)+'</div>'+bullets(x.bullets[lang])+'</div>'
+      +'</article>').join('')
+    +'</div></div>';
+}
 function experiencePanel(){
-  if(experienceTab==='leadership')return '<div class="experience-panel-inner">'+timeline(organizationExperience)+'</div>';
+  if(experienceTab==='leadership')return '<div class="experience-panel-inner">'+modernExperienceCards(organizationExperience,'leadership')+'</div>';
   if(experienceTab==='committee')return '<div class="experience-panel-inner"><div class="compact-list">'+committees.map(c=>'<div class="compact-item"><strong>'+committeeRoleLabel(c[1])+' · '+c[2]+'</strong><span>'+c[3]+' · '+periodLabel(c[0])+'</span>'+statusBadge('completed')+'</div>').join('')+'</div></div>';
   if(experienceTab==='training')return '<div class="experience-panel-inner"><div class="grid-2">'+training.map(t=>'<article class="card"><div class="card-status-row"><div class="kicker">'+t.period+'</div>'+statusBadge(periodStatus(t.period))+'</div><h4>'+t.name+'</h4><p><strong>'+t.org+'</strong></p><p style="margin-top:8px">'+t.desc[lang]+'</p></article>').join('')+'</div></div>';
   if(experienceTab==='certifications')return '<div class="experience-panel-inner"><div class="cert-grid">'+certifications.map(c=>'<div class="cert-item"><strong>'+c.title[lang]+'</strong><span>'+[c.meta,c.date].filter(Boolean).join(' · ')+'</span>'+statusBadge('completed')+'</div>').join('')+'</div></div>';
-  return '<div class="experience-panel-inner">'+timeline(professionalExperience)+'</div>';
+  return '<div class="experience-panel-inner">'+modernExperienceCards(professionalExperience,'professional')+'</div>';
 }
 function initRevealMotion(){
   const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
