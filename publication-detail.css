@@ -21,3 +21,13 @@ body{background:#eef4fa;color:#1e2f49;letter-spacing:-.003em}
 [data-theme="dark"] .tag{background:#122b49;border-color:rgba(113,168,231,.14);color:#bfdfff}[data-theme="dark"] .citation{background:#10243d;border-color:rgba(137,174,217,.12);color:#d8e6f5}[data-theme="dark"] .note{background:#10243d;color:#b7c6d8}[data-theme="dark"] .footer{background:#050e19;color:#8fa3ba}
 @media(max-width:720px){.topin{height:auto;padding:10px 0;align-items:center;flex-direction:row}.brand span{display:none}.actions{width:auto;margin-left:auto}.actions .btn{flex:0 0 auto;padding:9px 10px}.hero{padding:56px 0 38px}.hero h1{font-size:clamp(2rem,11vw,3rem)}.meta{grid-template-columns:1fr}.content{padding:42px 0 68px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+
+/* Justified publication body copy */
+.content p,
+.content li,
+.section p,
+.section li{
+  text-align:justify;
+  text-justify:inter-word;
+}
