@@ -269,28 +269,38 @@ function initRevealMotion(){
     '.intro-grid>.intro-copy',
     '.research-identity',
     '.stat',
-    '.edu-card',
+    '.education-heading',
+    '.education-modern-card',
     '.research-card',
     '.book-card',
     '.featured-dmath',
     '#projects .project-card',
     '.teaching-card',
     '.experience-tabs',
+    '.experience-modern-label',
+    '.experience-modern-card',
     '.experience-panel .timeline-item',
     '.experience-panel .compact-item',
     '.experience-panel .card',
     '.experience-panel .cert-item',
+    '.award-toolbar',
     '.award-card',
     '.skill-category',
-    '.resource-panel',
+    '#resources .resource-panel',
+    '#resources .academic-doc-item',
+    '#resources .quick-academic-panel',
+    '#resources .academic-profile-section',
+    '#resources .subsection:last-child',
     '.profile-link-card',
     '.contact-shell'
   ].join(',');
   const nodes=[...document.querySelectorAll(selector)];
 
-  nodes.forEach((el,i)=>{
+  nodes.forEach(el=>{
     el.classList.add('reveal-item');
-    el.style.setProperty('--reveal-delay',(i%4)*45+'ms');
+    const siblings=[...(el.parentElement?.children||[])].filter(node=>node.matches?.(selector));
+    const localIndex=Math.max(0,siblings.indexOf(el));
+    el.style.setProperty('--reveal-delay',Math.min(localIndex,3)*36+'ms');
   });
 
   if(reduce||!('IntersectionObserver' in window)){
@@ -300,15 +310,11 @@ function initRevealMotion(){
 
   const observer=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('is-visible');
-      }else{
-        entry.target.classList.remove('is-visible');
-      }
+      entry.target.classList.toggle('is-visible',entry.isIntersecting);
     });
   },{
-    threshold:.12,
-    rootMargin:'-4% 0px -8% 0px'
+    threshold:.08,
+    rootMargin:'0px 0px -5% 0px'
   });
 
   nodes.forEach(el=>observer.observe(el));
