@@ -3451,3 +3451,24 @@ body,
 [data-theme="dark"] .transcript-meta strong{
   color:#edf6ff;
 }
+
+
+/* Tighter top spacing for page/section entry */
+.hero{
+  padding-top:72px;
+  padding-bottom:72px;
+}
+.section{
+  padding-top:68px;
+  padding-bottom:88px;
+}
+@media(max-width:650px){
+  .hero{
+    padding-top:48px;
+    padding-bottom:56px;
+  }
+  .section{
+    padding-top:52px;
+    padding-bottom:68px;
+  }
+}
