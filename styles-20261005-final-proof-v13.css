@@ -4671,3 +4671,12 @@ html:not([data-theme="dark"]) .note{
   line-height:1.35;
   font-weight:700;
 }
+
+
+/* UKBI certificate: balanced four-card resource grid */
+#resources .academic-doc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#resources .academic-doc-ukbi strong{font-size:1.08rem}
+#resources .academic-doc-ukbi small+small{margin-top:5px}
+@media(max-width:900px){
+  #resources .academic-doc-grid{grid-template-columns:1fr}
+}
