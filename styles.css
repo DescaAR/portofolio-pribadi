@@ -4680,3 +4680,241 @@ html:not([data-theme="dark"]) .note{
 @media(max-width:900px){
   #resources .academic-doc-grid{grid-template-columns:1fr}
 }
+
+
+/* =========================================================================
+   MODERN ACADEMIC EDITION · 28 OCT 2026 · v14
+   Restrained editorial rhythm, responsive navigation, precise surface system.
+   ========================================================================= */
+:root{
+  --modern-ink:#102443;
+  --modern-muted:#62758e;
+  --modern-line:rgba(35,75,125,.12);
+  --modern-accent:#215fbd;
+  --modern-paper:#ffffff;
+  --modern-canvas:#f5f8fc;
+  --modern-elevation:0 15px 40px rgba(10,33,71,.055);
+  --modern-radius:20px;
+}
+html{scroll-padding-top:82px}
+body{background:var(--modern-canvas);font-family:Inter,"Segoe UI Variable","Segoe UI",ui-sans-serif,system-ui,sans-serif;font-kerning:normal;font-feature-settings:"kern" 1,"ss01" 1;letter-spacing:-.009em}
+.container{width:min(1200px,calc(100% - 56px))}
+.section{padding:92px 0}
+.anchor{scroll-margin-top:86px}
+.section>.container{isolation:isolate}
+#about,#publications,#projects,#experience,#achievements,#resources,#contact{
+  background:var(--modern-canvas)!important;
+}
+#book,#teaching{background:#edf3f9!important}
+.section:not(.dark):not(.alt)::before{display:none}
+.section .eyebrow,.hero .eyebrow{font-size:.72rem;letter-spacing:.14em;font-weight:800}
+.head{padding-bottom:23px;margin-bottom:36px;gap:24px;border-bottom:1px solid var(--modern-line)}
+.head h3,.section-title{font-size:clamp(2.05rem,3.5vw,3rem);letter-spacing:-.049em;line-height:1.12}
+.head p{max-width:510px;font-size:.94rem;line-height:1.8}
+.subsection h4{letter-spacing:-.033em}
+body p,body li{line-height:1.75}
+:where(.eyebrow,.kicker,.tag,.chip,.btn,.nav-links a,.award-toolbar,.experience-tabs,.document-state,.status){text-align:left;text-justify:auto}
+
+/* Navigation: quiet, distinctly interactive, and no overcrowding. */
+.nav{background:rgba(250,252,255,.90)!important;border-bottom:1px solid rgba(44,88,142,.10)!important;box-shadow:0 3px 20px rgba(11,35,72,.035)!important;backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%)}
+.nav-in{height:72px;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-size:.94rem;letter-spacing:-.027em}
+.brand-mark{border-radius:11px;box-shadow:0 5px 15px rgba(13,39,78,.08)}
+.nav-links{gap:2px!important;font-size:.795rem;white-space:nowrap}
+.nav-links a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 10px;border-radius:10px;font-weight:690;transition:background .2s ease,color .2s ease}
+.nav-links a:hover{background:rgba(34,104,194,.065);color:#155db6}
+.nav-links a.active{background:rgba(41,115,209,.095);color:#155cb2!important}
+.nav-links a.active::after{display:none}
+.nav-actions{flex:0 0 auto;gap:8px}
+.theme-toggle,.mobile-toggle{border:1px solid var(--modern-line);border-radius:11px;background:#f5f8fd;box-shadow:none;min-width:40px;height:40px;display:inline-grid;place-items:center}
+.mobile-toggle{display:none}
+.theme-toggle:hover,.mobile-toggle:hover{background:#ebf2fc;border-color:rgba(40,113,203,.24)}
+.reading-progress{height:3px}
+.reading-progress span{background:linear-gradient(90deg,#265cbd,#54a5e9);box-shadow:none}
+
+/* Hero: clear editorial hierarchy, understated photograph frame. */
+.hero{padding:96px 0 94px!important;min-height:620px;background:radial-gradient(ellipse at 80% 28%,rgba(84,150,224,.11),transparent 42%),linear-gradient(155deg,#fff 8%,#f2f7fc 100%)!important}
+.hero:before{opacity:.35}
+.hero:after{opacity:.35}
+.hero-grid{grid-template-columns:minmax(0,1.25fr) minmax(270px,.75fr);gap:clamp(38px,6vw,90px);align-items:center}
+.hero h1{font-size:clamp(3.2rem,6.5vw,6.2rem);letter-spacing:-.069em;line-height:.99;text-wrap:balance}
+.hero h2{font-size:clamp(1.3rem,2.3vw,1.9rem);font-weight:620;line-height:1.32;letter-spacing:-.035em;max-width:640px}
+.hero p{max-width:630px;font-size:1.035rem;line-height:1.82}
+.hero-actions{gap:10px;margin-top:28px}
+.hero-actions .btn{min-height:45px}
+.hero-actions .btn:first-child{box-shadow:0 8px 18px rgba(34,100,191,.13)}
+.hero-meta{gap:12px;align-items:center;flex-wrap:wrap}
+.portrait{max-width:390px;aspect-ratio:4/4.9;justify-self:end;outline:1px solid rgba(56,106,164,.12);outline-offset:6px;border-radius:26px!important;box-shadow:0 20px 48px rgba(20,51,93,.12)!important;transition:box-shadow .3s ease,transform .3s ease}
+.portrait:before{opacity:.32}
+.portrait .profile-photo{border-radius:26px}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.portrait:hover{transform:translateY(-3px);box-shadow:0 27px 56px rgba(20,51,93,.16)!important}}
+
+/* Cohesive card system. */
+.card,.award-card,.cert-item,.resource-panel,.profile-link-card,.academic-doc-item,.contact-card,
+#about .education-modern-card,#experience .experience-modern-card,#teaching .teaching-card{
+  border-radius:var(--modern-radius)!important;
+  border:1px solid var(--modern-line)!important;
+  box-shadow:var(--modern-elevation)!important;
+}
+.card,.award-card,.cert-item,.resource-panel,.profile-link-card,.academic-doc-item,.contact-card{
+  background:rgba(255,255,255,.96)!important;
+}
+.card{padding:25px}
+.card h4{letter-spacing:-.027em;line-height:1.38}
+.card p,.resource-panel p{line-height:1.76}
+.card:hover{transform:translateY(-2px);box-shadow:0 22px 44px rgba(12,42,88,.095)!important;border-color:rgba(39,107,190,.23)!important}
+.btn{border-radius:11px;min-height:42px;font-size:.87rem;font-weight:750;transition:background .2s ease,box-shadow .2s ease,transform .2s ease}
+.btn-primary{background:#215fbd!important;color:#fff!important;border-color:transparent!important;box-shadow:0 8px 18px rgba(33,95,189,.14)}
+.btn-primary:hover{background:#194f9c!important;transform:translateY(-1px)}
+.btn-secondary{border-color:var(--modern-line);background:rgba(255,255,255,.82)}
+.btn-secondary:hover{border-color:rgba(33,95,189,.24);background:#f6faff}
+.tag,.chip{border-radius:8px;letter-spacing:-.004em}
+.stat{border:1px solid rgba(43,97,157,.12)!important;background:#fff!important;box-shadow:0 8px 24px rgba(10,35,74,.035)!important;border-radius:17px!important}
+.stat strong{letter-spacing:-.046em}
+.research-identity{border-radius:19px;background:rgba(255,255,255,.70)}
+#about .education-modern-grid{gap:16px}
+#about .education-modern-card,#experience .experience-modern-card{background:rgba(255,255,255,.96)!important}
+#about .education-modern-card:hover,#experience .experience-modern-card:hover{box-shadow:0 20px 40px rgba(13,48,96,.085)!important}
+#publications .research-grid{gap:18px}
+#publications .research-card{padding:29px 30px;border:1px solid rgba(38,90,152,.13)!important;border-left:3px solid #447fce!important;border-radius:20px!important;background:rgba(255,255,255,.97)!important;box-shadow:0 10px 30px rgba(12,39,76,.045)!important}
+#publications .research-card:hover{box-shadow:0 18px 40px rgba(10,36,78,.10)!important}
+#publications .research-card h4{font-size:1.25rem;line-height:1.38}
+#publications .research-note{border-radius:9px;background:#f3f7fc}
+#book .book-card{background:rgba(255,255,255,.96)!important;box-shadow:var(--modern-elevation)!important}
+#projects>.container>.grid{gap:18px}
+#projects .project-card{padding:23px!important;background:rgba(255,255,255,.97)!important;overflow:hidden}
+#projects .project-card:after{top:19px;right:20px}
+#projects .project-preview{border-radius:15px;margin:-5px -5px 21px;background:radial-gradient(circle at 88% 10%,rgba(74,140,225,.09),transparent 11rem),linear-gradient(150deg,#f8fbff,#edf4fc)}
+#projects .project-card h4{font-size:1.18rem;line-height:1.35}
+#projects .project-proof-link{border-radius:8px}
+#teaching .teaching-card{background:#fff!important}
+#experience .experience-tabs{border-radius:14px;box-shadow:none!important}
+#experience .experience-tab{border-radius:10px}
+#achievements .awards-grid{gap:12px}
+#achievements .award-card{padding:17px 18px;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+#achievements .award-card:hover{transform:translateY(-2px);border-color:rgba(33,95,189,.22)!important;box-shadow:0 15px 32px rgba(10,35,74,.065)!important}
+#achievements .award-icon{border-radius:12px}
+#skills{background:linear-gradient(135deg,#0d213f,#123b69)!important}
+#skills .skill-category{background:rgba(255,255,255,.045)!important;border:1px solid rgba(197,224,252,.12)!important;border-radius:19px!important;box-shadow:none!important}
+#skills .chip,#skills .subsection .area{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.11);border-radius:9px}
+#resources .resource-panel,#resources .academic-doc-item{background:rgba(255,255,255,.96)!important}
+#resources .quick-academic-panel{border-radius:20px;background:linear-gradient(145deg,#fff,#eff5fd);box-shadow:0 12px 30px rgba(10,35,74,.045)}
+#resources .quick-action{border-radius:12px}
+#resources .profile-link-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(10,35,74,.08)!important}
+#contact .contact-card{box-shadow:var(--modern-elevation)!important}
+.modal-backdrop{backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+.modal{border-radius:24px;box-shadow:0 30px 90px rgba(5,22,49,.27)}
+.footer{background:#0b1a30!important;border-top:1px solid rgba(255,255,255,.08)}
+.footer-in{max-width:1200px}
+
+/* Dark surfaces keep the same hierarchy without stark colour blocks. */
+[data-theme="dark"]{
+  --modern-ink:#ecf4fd;
+  --modern-muted:#b0c2d8;
+  --modern-line:rgba(164,193,226,.13);
+  --modern-canvas:#0b1626;
+  --modern-paper:#122338;
+  --modern-elevation:none;
+}
+[data-theme="dark"] body{background:#0b1626!important}
+[data-theme="dark"] #about,[data-theme="dark"] #publications,[data-theme="dark"] #projects,
+[data-theme="dark"] #experience,[data-theme="dark"] #achievements,[data-theme="dark"] #resources,
+[data-theme="dark"] #contact{background:#0b1626!important}
+[data-theme="dark"] #book,[data-theme="dark"] #teaching{background:#0e1c2f!important}
+[data-theme="dark"] .nav{background:rgba(10,22,38,.93)!important;border-bottom-color:rgba(158,192,231,.10)!important;box-shadow:0 4px 18px rgba(0,0,0,.10)!important}
+[data-theme="dark"] .nav-links a{color:#b7c9dd}
+[data-theme="dark"] .nav-links a.active{color:#b5d9ff!important;background:rgba(102,172,243,.13)}
+[data-theme="dark"] .nav-links a:hover{color:#e8f3ff;background:rgba(102,172,243,.09)}
+[data-theme="dark"] .theme-toggle,[data-theme="dark"] .mobile-toggle{background:#14283f;border-color:rgba(152,192,235,.15);color:#edf5ff}
+[data-theme="dark"] .hero{background:radial-gradient(ellipse at 84% 24%,rgba(71,139,222,.16),transparent 43%),linear-gradient(155deg,#0b192a,#0e223a)!important}
+[data-theme="dark"] .hero p,[data-theme="dark"] .head p{color:#b5c8de}
+[data-theme="dark"] .portrait{border-color:rgba(150,191,237,.10);outline-color:rgba(139,186,239,.17);box-shadow:0 22px 54px rgba(0,0,0,.26)!important}
+[data-theme="dark"] .card,[data-theme="dark"] .award-card,[data-theme="dark"] .cert-item,
+[data-theme="dark"] .resource-panel,[data-theme="dark"] .profile-link-card,
+[data-theme="dark"] .academic-doc-item,[data-theme="dark"] .contact-card,
+[data-theme="dark"] #about .education-modern-card,
+[data-theme="dark"] #experience .experience-modern-card,
+[data-theme="dark"] #teaching .teaching-card{
+  background:#122238!important;
+  border-color:rgba(164,193,226,.12)!important;
+  box-shadow:none!important;
+}
+[data-theme="dark"] .card:hover,[data-theme="dark"] .award-card:hover{border-color:rgba(118,179,244,.27)!important;box-shadow:0 14px 30px rgba(0,0,0,.15)!important}
+[data-theme="dark"] #publications .research-card{background:#122238!important;border:1px solid rgba(164,193,226,.12)!important;border-left:3px solid #689dda!important;box-shadow:none!important}
+[data-theme="dark"] #book .book-card,[data-theme="dark"] #projects .project-card,[data-theme="dark"] #resources .resource-panel,[data-theme="dark"] #resources .academic-doc-item{background:#122238!important;border-color:rgba(164,193,226,.12)!important;box-shadow:none!important}
+[data-theme="dark"] #teaching .teaching-card{background:#122238!important}
+[data-theme="dark"] .stat{background:#14283e!important;border-color:rgba(164,193,226,.12)!important;box-shadow:none!important}
+[data-theme="dark"] .research-identity{background:#122238;border-color:rgba(164,193,226,.13)}
+[data-theme="dark"] #projects .project-preview{background:radial-gradient(circle at 90% 5%,rgba(81,150,230,.10),transparent 11rem),linear-gradient(150deg,#152d49,#10243b)}
+[data-theme="dark"] #skills{background:linear-gradient(135deg,#0c1a2f,#112b49)!important}
+[data-theme="dark"] #skills .skill-category{background:rgba(182,213,248,.04)!important}
+[data-theme="dark"] #resources .quick-academic-panel{background:#122238!important;border-color:rgba(164,193,226,.13)!important}
+[data-theme="dark"] .btn-primary{background:#4e95e3!important;color:#07182f!important}
+[data-theme="dark"] .btn-primary:hover{background:#74aff1!important}
+[data-theme="dark"] .btn-secondary{background:#152b45;border-color:rgba(164,193,226,.15);color:#e0edfb}
+[data-theme="dark"] .btn-secondary:hover{background:#193452}
+[data-theme="dark"] .modal{background:#0e2035!important;border:1px solid rgba(164,193,226,.13)!important}
+[data-theme="dark"] .footer{background:#07111f!important}
+
+/* Navigation and layout on tablet, phone, and narrow laptops. */
+@media(max-width:1110px){
+ .nav-links{display:none!important}
+ .mobile-toggle{display:inline-grid!important}
+ .mobile-menu.open{
+   display:flex!important;position:absolute;top:72px;left:16px;right:16px;
+   flex-direction:column;gap:3px;max-height:min(75vh,650px);overflow-y:auto;
+   padding:12px;border:1px solid var(--modern-line);border-radius:17px;
+   background:#fff;box-shadow:0 24px 55px rgba(11,35,72,.13);
+   backdrop-filter:blur(20px);
+ }
+ .mobile-menu.open a{display:block;padding:11px 13px;border-radius:10px;font-size:.92rem}
+ .mobile-menu.open a:hover,.mobile-menu.open a.active{background:#edf4fc}
+ [data-theme="dark"] .mobile-menu.open{background:#11243b;border-color:rgba(164,193,226,.16)}
+ [data-theme="dark"] .mobile-menu.open a:hover,[data-theme="dark"] .mobile-menu.open a.active{background:#1b3856}
+}
+@media(max-width:980px){
+ .hero{min-height:0;padding:76px 0!important}
+ .hero-grid{grid-template-columns:minmax(0,1fr) minmax(220px,.66fr);gap:32px}
+ .portrait{max-width:320px}
+ .head{align-items:flex-start}
+}
+@media(max-width:760px){
+ .container{width:min(100% - 36px,1200px)}
+ .section{padding:70px 0}
+ .hero{padding:64px 0 68px!important}
+ .hero-grid{grid-template-columns:1fr;gap:42px}
+ .hero h1{font-size:clamp(3.05rem,12vw,4.5rem)}
+ .portrait{width:min(100%,310px);justify-self:start;aspect-ratio:4/4.7}
+ .head{gap:12px;margin-bottom:27px}
+ #publications .research-card{padding:24px!important}
+ #projects .project-card{padding:20px!important}
+ .section .eyebrow{font-size:.7rem}
+}
+@media(max-width:540px){
+ .container{width:calc(100% - 30px)}
+ .nav-in{height:66px}
+ .mobile-menu.open{top:66px;left:10px;right:10px}
+ .brand{font-size:.9rem}
+ .brand span{display:inline;max-width:190px;overflow:hidden;text-overflow:ellipsis}
+ .brand-mark{width:33px;height:33px}
+ .hero{padding:52px 0 60px!important}
+ .hero h1{font-size:clamp(2.75rem,13vw,3.65rem)}
+ .hero h2{font-size:1.27rem}
+ .hero p{font-size:.96rem}
+ .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+ .hero-actions .btn{width:100%;padding:11px 12px}
+ .hero-actions .btn:first-child{grid-column:1/-1}
+ .hero-meta{gap:10px;font-size:.77rem}
+ .section{padding:58px 0}
+ .head h3,.section-title{font-size:clamp(1.85rem,8vw,2.35rem)}
+ #publications .research-card{padding:20px!important}
+ .card,.resource-panel{padding:20px}
+ .modal{border-radius:18px;padding:20px}
+ .award-card{padding:15px!important}
+ .stat-grid{gap:9px}
+ .stat{min-height:110px;padding:17px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .portrait,.card,.award-card,.btn,.nav-links a,.mobile-menu a{animation:none!important;transition:none!important}
+ .portrait:hover,.card:hover,.award-card:hover,.btn:hover{transform:none!important}
+}
