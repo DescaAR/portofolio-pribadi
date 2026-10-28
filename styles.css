@@ -5080,3 +5080,48 @@ main > section.section,
  [data-theme="dark"] .mobile-menu.open a:hover,[data-theme="dark"] .mobile-menu.open a.active{background:#1b3856}
 }
 @media(max-width:540px){.mobile-menu.open{top:66px;left:10px;right:10px}}
+
+
+/* Contact-to-footer continuity · 2026-10-28 · v18
+   Let the closing section and complete footer read as one deliberate ending. */
+#contact.section{
+  padding-top:30px!important;
+  padding-bottom:16px!important;
+}
+#contact .contact-shell{
+  padding:26px!important;
+}
+#contact .contact-shell .contact-grid{
+  gap:32px;
+}
+#contact .contact-intro .section-title{
+  font-size:clamp(2rem,3.25vw,2.85rem);
+  line-height:1.17;
+  text-wrap:balance;
+}
+#contact .contact-intro p{
+  color:#d5e3f4!important;
+  text-align:left!important;
+  text-wrap:pretty;
+  line-height:1.76;
+  margin-top:15px;
+}
+#contact .contact-actions{margin-top:23px}
+.footer{
+  padding-top:18px!important;
+  padding-bottom:18px!important;
+}
+@media(max-width:900px){
+  #contact.section{padding-top:28px!important;padding-bottom:16px!important}
+  #contact .contact-shell{padding:23px!important}
+  #contact .contact-shell .contact-grid{gap:24px}
+}
+@media(max-width:650px){
+  #contact.section{padding-top:24px!important;padding-bottom:14px!important}
+  #contact .contact-shell{padding:19px!important}
+  #contact .contact-shell .contact-grid{gap:20px}
+  #contact .contact-intro .section-title{font-size:clamp(1.8rem,7.1vw,2.25rem)}
+  #contact .contact-intro p{font-size:.94rem;line-height:1.7}
+  #contact .contact-actions{margin-top:18px}
+  .footer{padding-top:19px!important;padding-bottom:19px!important}
+}
