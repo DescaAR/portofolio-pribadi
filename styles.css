@@ -5162,3 +5162,208 @@ main > section.section,
 [data-theme="dark"] .mobile-menu a.nav-home:not(.active){
   background:transparent!important;
 }
+
+
+/* =========================================================================
+   CYCLIC TOPOLOGY RESEARCH ROADMAP · v20 · 29 October 2026
+   Visibly separate proposed research from manuscripts and publications.
+   ========================================================================= */
+#publications .research-plans-section{
+  margin-top:39px;
+  padding-top:29px;
+  border-top:1px solid var(--modern-line,rgba(38,83,136,.14));
+}
+#publications .research-plans-intro{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(230px,365px);
+  gap:22px;
+  align-items:end;
+  margin-bottom:19px;
+}
+#publications .research-plans-eyebrow{
+  display:block;
+  margin-bottom:7px;
+  color:#2467bc;
+  font-size:.68rem;
+  font-weight:850;
+  letter-spacing:.14em;
+}
+#publications .research-plans-intro h4{
+  margin:0;
+  font-size:clamp(1.43rem,2.7vw,1.95rem);
+  line-height:1.19;
+  letter-spacing:-.042em;
+  color:#10294e;
+}
+#publications .research-plans-intro p{
+  margin:0;
+  color:#596f89;
+  font-size:.91rem;
+  line-height:1.68;
+  text-align:left!important;
+  text-wrap:pretty;
+}
+#publications .research-plans-list{display:grid;gap:13px}
+#publications .research-plan-card{
+  padding:23px 25px 21px;
+  border:1px solid rgba(51,99,155,.14);
+  border-left:3px solid #6b9ace;
+  border-radius:17px;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 9px 25px rgba(12,40,80,.037);
+}
+#publications .research-plan-top{
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr) auto;
+  align-items:start;
+  gap:13px;
+  margin-bottom:17px;
+}
+#publications .research-plan-number{
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border:1px solid rgba(49,107,185,.12);
+  border-radius:11px;
+  background:#eef4fb;
+  color:#2c65ae;
+  font-size:.84rem;
+  font-weight:850;
+  font-variant-numeric:tabular-nums;
+}
+#publications .research-plan-domain{
+  color:#527395;
+  font-size:.68rem;
+  font-weight:830;
+  letter-spacing:.072em;
+  text-transform:uppercase;
+}
+#publications .research-plan-heading h4{
+  margin:4px 0 0;
+  color:#10294e;
+  font-size:clamp(1.07rem,1.9vw,1.23rem);
+  line-height:1.4;
+  letter-spacing:-.025em;
+}
+#publications .research-plan-status{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  white-space:nowrap;
+  margin-top:2px;
+  padding:6px 9px;
+  border:1px solid rgba(64,114,174,.16);
+  border-radius:999px;
+  background:#f4f7fb;
+  color:#506987;
+  font-size:.66rem;
+  font-weight:800;
+  letter-spacing:.015em;
+}
+#publications .research-plan-body{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(240px,.9fr);
+  gap:clamp(20px,3.5vw,48px);
+  padding-left:53px;
+}
+#publications .research-plan-label{
+  margin:0 0 6px;
+  color:#527aab;
+  font-size:.65rem;
+  font-weight:850;
+  letter-spacing:.11em;
+}
+#publications .research-plan-narrative p{
+  margin:0 0 13px;
+  color:#4b617c;
+  line-height:1.72;
+  font-size:.91rem;
+  text-align:left!important;
+  text-wrap:pretty;
+}
+#publications .research-plan-narrative p:last-child{margin-bottom:0}
+#publications .research-plan-targets{
+  padding-left:22px;
+  border-left:1px solid rgba(59,105,158,.12);
+}
+#publications .research-plan-targets ul{
+  margin:0;
+  padding-left:18px;
+  color:#4b617c;
+}
+#publications .research-plan-targets li{
+  padding-left:2px;
+  margin:0 0 7px;
+  font-size:.88rem;
+  line-height:1.63;
+  text-align:left!important;
+}
+#publications .research-plan-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:13px}
+#publications .research-plan-tags span{
+  padding:5px 8px;
+  border-radius:7px;
+  border:1px solid rgba(52,101,159,.12);
+  background:#f3f7fc;
+  color:#53718f;
+  font-size:.67rem;
+  font-weight:680;
+}
+#publications .research-plans-disclaimer{
+  margin:14px 0 0;
+  color:#6a7e96;
+  font-size:.82rem;
+  line-height:1.65;
+  text-align:left!important;
+}
+[data-theme="dark"] #publications .research-plans-section{border-top-color:rgba(160,193,229,.13)}
+[data-theme="dark"] #publications .research-plans-intro h4,
+[data-theme="dark"] #publications .research-plan-heading h4{color:#e5f0fc}
+[data-theme="dark"] #publications .research-plans-intro p,
+[data-theme="dark"] #publications .research-plan-narrative p,
+[data-theme="dark"] #publications .research-plan-targets ul,
+[data-theme="dark"] #publications .research-plan-targets li{color:#b6c9df}
+[data-theme="dark"] #publications .research-plan-card{
+  background:#122238;
+  border-color:rgba(164,193,226,.13);
+  border-left-color:#6e9dd2;
+  box-shadow:none;
+}
+[data-theme="dark"] #publications .research-plan-number{
+  background:#1a3653;
+  border-color:rgba(141,184,235,.15);
+  color:#b8dbff;
+}
+[data-theme="dark"] #publications .research-plan-domain,
+[data-theme="dark"] #publications .research-plan-label,
+[data-theme="dark"] #publications .research-plans-eyebrow{color:#91bce8}
+[data-theme="dark"] #publications .research-plan-status{
+  background:#162d47;
+  border-color:rgba(145,184,229,.14);
+  color:#b3cbe6;
+}
+[data-theme="dark"] #publications .research-plan-targets{border-left-color:rgba(164,193,226,.13)}
+[data-theme="dark"] #publications .research-plan-tags span{
+  background:#182e48;
+  border-color:rgba(164,193,226,.12);
+  color:#acc9e9;
+}
+[data-theme="dark"] #publications .research-plans-disclaimer{color:#9eb3cb}
+@media(max-width:900px){
+  #publications .research-plans-intro{grid-template-columns:1fr;gap:8px}
+  #publications .research-plan-body{grid-template-columns:1fr;gap:12px;padding-left:53px}
+  #publications .research-plan-targets{padding:12px 0 0;border-left:0;border-top:1px solid rgba(59,105,158,.12)}
+  [data-theme="dark"] #publications .research-plan-targets{border-top-color:rgba(164,193,226,.13)}
+}
+@media(max-width:650px){
+  #publications .research-plans-section{margin-top:28px;padding-top:24px}
+  #publications .research-plans-intro{margin-bottom:14px}
+  #publications .research-plan-card{padding:18px}
+  #publications .research-plan-top{grid-template-columns:34px 1fr;gap:10px;margin-bottom:12px}
+  #publications .research-plan-number{width:34px;height:34px;font-size:.76rem}
+  #publications .research-plan-status{grid-column:2;justify-self:start;margin-top:0}
+  #publications .research-plan-body{padding-left:0}
+  #publications .research-plan-heading h4{font-size:1.07rem}
+  #publications .research-plan-narrative p{font-size:.89rem}
+  #publications .research-plan-targets li{font-size:.85rem}
+}
