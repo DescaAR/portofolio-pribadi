@@ -5125,3 +5125,40 @@ main > section.section,
   #contact .contact-actions{margin-top:18px}
   .footer{padding-top:19px!important;padding-bottom:19px!important}
 }
+
+
+/* Navigation active-state correction · v19 · 29 October 2026
+   Home must be visually neutral unless it is the active section. */
+.nav-links a.nav-home:not(.active){
+  color:#52657f!important;
+  background:transparent!important;
+  font-weight:690;
+}
+.nav-links a.nav-home:not(.active):hover{
+  color:#155db6!important;
+  background:rgba(34,104,194,.065)!important;
+}
+.nav-links a.nav-home.active{
+  color:#155cb2!important;
+  background:rgba(41,115,209,.095)!important;
+  font-weight:800;
+}
+.mobile-menu a.nav-home:not(.active){
+  background:transparent!important;
+  font-weight:690;
+}
+[data-theme="dark"] .nav-links a.nav-home:not(.active){
+  background:transparent!important;
+  color:#b7c9dd!important;
+}
+[data-theme="dark"] .nav-links a.nav-home:not(.active):hover{
+  background:rgba(102,172,243,.09)!important;
+  color:#e8f3ff!important;
+}
+[data-theme="dark"] .nav-links a.nav-home.active{
+  background:rgba(102,172,243,.13)!important;
+  color:#b5d9ff!important;
+}
+[data-theme="dark"] .mobile-menu a.nav-home:not(.active){
+  background:transparent!important;
+}
