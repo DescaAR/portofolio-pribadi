@@ -4918,3 +4918,23 @@ body p,body li{line-height:1.75}
  .portrait,.card,.award-card,.btn,.nav-links a,.mobile-menu a{animation:none!important;transition:none!important}
  .portrait:hover,.card:hover,.award-card:hover,.btn:hover{transform:none!important}
 }
+
+
+/* Compact hero spacing · 28 October 2026
+   Bring the introduction closer to the navigation without altering other sections. */
+.hero{
+  min-height:0!important;
+  padding-top:48px!important;
+  padding-bottom:56px!important;
+}
+.hero-grid{align-items:start!important}
+@media(max-width:980px){
+  .hero{padding-top:42px!important;padding-bottom:48px!important}
+}
+@media(max-width:760px){
+  .hero{padding-top:34px!important;padding-bottom:42px!important}
+  .hero-grid{gap:28px!important}
+}
+@media(max-width:540px){
+  .hero{padding-top:28px!important;padding-bottom:36px!important}
+}
