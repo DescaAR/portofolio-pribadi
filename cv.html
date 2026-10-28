@@ -210,6 +210,50 @@
   text-align:justify;
   text-justify:inter-word;
 }
+
+
+/* Modern Academic Edition · Screen CV */
+@media screen {
+  :root{--cv-border:rgba(39,81,133,.13)}
+  body{font-family:Inter,"Segoe UI Variable","Segoe UI",system-ui,sans-serif;background:radial-gradient(circle at 92% 7%,rgba(76,145,226,.065),transparent 24rem),#f5f8fc;letter-spacing:-.007em}
+  .toolbar{background:rgba(250,252,255,.92);border-bottom:1px solid var(--cv-border);box-shadow:0 3px 16px rgba(10,34,73,.03);backdrop-filter:blur(20px)}
+  .toolbar-inner{width:min(1060px,calc(100% - 40px));min-height:70px}
+  .brand{letter-spacing:-.025em}
+  .actions{gap:8px}
+  .btn{border-radius:11px;min-height:40px;padding:9px 15px;transition:background .2s ease,border-color .2s ease}
+  .btn:hover{background:var(--soft);border-color:rgba(33,95,189,.25)}
+  .btn.primary{background:#215fbd;border-color:transparent}
+  .btn.primary:hover{background:#194f9c}
+  .page{width:min(1020px,calc(100% - 40px));margin:34px auto 70px;border:1px solid var(--cv-border);border-radius:21px;overflow:hidden;box-shadow:0 22px 65px rgba(10,35,74,.09)}
+  .header{padding:45px 46px 36px;border-bottom:1px solid var(--cv-border);background:linear-gradient(135deg,rgba(247,250,254,.8),rgba(255,255,255,.3))}
+  .header h1{font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-.057em;line-height:1.12}
+  .headline{font-size:.97rem;margin-top:12px}
+  .photo{border-radius:14px;box-shadow:0 10px 24px rgba(13,44,85,.12)}
+  .content{padding:35px 46px 50px}
+  .section{margin-top:34px}
+  .section h2{padding-bottom:11px;font-size:.83rem;letter-spacing:.12em;border-bottom:1px solid var(--cv-border)}
+  .summary{line-height:1.85}
+  .item{grid-template-columns:145px minmax(0,1fr);padding:16px 0;gap:23px}
+  .item h3{letter-spacing:-.012em}
+  .skill,.compact div{border-radius:12px;border-color:var(--cv-border);background:var(--soft)}
+  .awards{column-gap:30px}
+  .footer{background:var(--soft)}
+  [data-theme="dark"] body{background:#0b1626}
+  [data-theme="dark"] .toolbar{background:rgba(10,22,38,.92)}
+  [data-theme="dark"] .page{border-color:rgba(164,193,226,.13);box-shadow:0 22px 55px rgba(0,0,0,.22)}
+  [data-theme="dark"] .header{background:linear-gradient(135deg,#10233a,#0d1c30)}
+  [data-theme="dark"] .skill,[data-theme="dark"] .compact div{border-color:rgba(164,193,226,.12)}
+}
+@media screen and (max-width:720px){
+  .toolbar-inner{width:calc(100% - 30px);padding:10px 0;gap:11px}
+  .page{width:calc(100% - 28px);margin:18px auto 40px;border-radius:16px}
+  .header{padding:29px 25px;gap:18px}
+  .content{padding:27px 25px 38px}
+  .header h1{font-size:2.25rem}
+  .item{grid-template-columns:1fr;gap:4px}
+  .actions{width:100%}
+}
+
 </style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
