@@ -30,7 +30,20 @@
     [data-theme="dark"] .primary{background:linear-gradient(135deg,#4b8fe8,#67b2ff);color:#06172f}
     :where(a,button):focus-visible{outline:3px solid #58a6ff;outline-offset:3px}
     @media(max-width:520px){.topin{width:min(100% - 28px,1180px)}.brand span{display:none}.wrap{padding:36px 8px}.actions{flex-direction:column}.btn{width:100%}}
-  </style>
+  
+    /* Modern Academic Edition · 404 */
+    body{background:radial-gradient(ellipse at 78% 17%,color-mix(in srgb,var(--blue) 9%,transparent),transparent 31rem),linear-gradient(155deg,var(--bg1),var(--bg2));letter-spacing:-.009em}
+    .top{background:color-mix(in srgb,var(--panel) 91%,transparent);box-shadow:0 3px 16px rgba(11,35,72,.035);backdrop-filter:blur(20px)}
+    .topin{min-height:72px}
+    .wrap{padding:50px 30px;border:0}
+    .code{font-size:.72rem;letter-spacing:.15em}
+    h1{font-size:clamp(2.6rem,7vw,4.7rem);letter-spacing:-.064em;line-height:1.06}
+    p{max-width:525px}
+    .btn{border-radius:11px;min-height:45px}
+    .primary{background:#215fbd;box-shadow:0 8px 18px rgba(33,95,189,.14)}
+    [data-theme="dark"] .primary{background:#4e95e3;color:#07182f}
+    @media(max-width:520px){.topin{min-height:66px}.wrap{padding:38px 5px}}
+</style>
 </head>
 <body>
   <header class="top"><div class="topin"><a class="brand" href="/portofolio-pribadi/"><img src="/portofolio-pribadi/portfolio-logo.jpg" alt=""><span>Desca Affajry Rais</span></a><button class="theme" id="theme" type="button" aria-label="Toggle theme">◐</button></div></header>
