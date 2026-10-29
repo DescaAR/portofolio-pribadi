@@ -5367,3 +5367,31 @@ main > section.section,
   #publications .research-plan-narrative p{font-size:.89rem}
   #publications .research-plan-targets li{font-size:.85rem}
 }
+
+
+/* Single-line hero name · v21 · 29 October 2026
+   Size the full name from the available text-column width, not the viewport. */
+.hero-grid > div:first-child{
+  min-width:0;
+  container-type:inline-size;
+}
+.hero h1{
+  display:block;
+  max-width:100%;
+  width:max-content;
+  margin-right:0;
+  font-size:clamp(1.55rem,3.8vw,4.5rem);
+  font-size:clamp(1.55rem,9cqw,5rem);
+  line-height:1.06;
+  letter-spacing:-.061em;
+  white-space:nowrap;
+  overflow-wrap:normal;
+  word-break:normal;
+  text-wrap:nowrap;
+}
+@media(max-width:760px){
+  .hero h1{
+    font-size:clamp(1.55rem,9cqw,4rem);
+    line-height:1.09;
+  }
+}
